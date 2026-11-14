@@ -1,0 +1,194 @@
+{
+  "about": "OliveSoft pricing used by the deck's budget slide. Edit it on the web app's Pricing page. Day rates are OliveSoft's own; cloud and AI prices are public list prices with their source and date.",
+  "currency": "EUR",
+  "status": "estimate",
+  "last_updated": "2026-11-01",
+  "usd_per_eur": {
+    "value": 1.1172,
+    "date": "2026-10-30",
+    "source": "European Central Bank reference rate"
+  },
+  "workdays_per_week": 5,
+  "support_percent_of_build": 0.15,
+  "contingency_percent": 0.1,
+  "margin_percent": 0.15,
+  "day_rates": {
+    "backend": {
+      "junior": 200,
+      "mid": 250,
+      "senior": 325
+    },
+    "frontend": {
+      "junior": 185,
+      "mid": 230,
+      "senior": 300
+    },
+    "devops": {
+      "junior": 225,
+      "mid": 280,
+      "senior": 365
+    },
+    "pm": {
+      "junior": 240,
+      "mid": 300,
+      "senior": 391
+    },
+    "designer": {
+      "junior": 175,
+      "mid": 220,
+      "senior": 285
+    },
+    "qa": {
+      "junior": 160,
+      "mid": 200,
+      "senior": 260
+    }
+  },
+  "staffing": {
+    "backend": "mid",
+    "frontend": "mid",
+    "devops": "mid",
+    "pm": "senior",
+    "designer": "mid",
+    "qa": "mid"
+  },
+  "default_cloud": "azure",
+  "hours_per_month": 730,
+  "cloud": {
+    "azure": {
+      "label": "Microsoft Azure",
+      "region": "France Central",
+      "currency": "EUR",
+      "source": "Azure Retail Prices API (prices.azure.com), pay-as-you-go, Linux",
+      "date": "2026-11-01",
+      "items": {
+        "vm_small": {
+          "label": "VM B2s (2 vCPU, 4 Go)",
+          "unit": "hour",
+          "price": 0.0415
+        },
+        "vm_medium": {
+          "label": "VM D4s v5 (4 vCPU, 16 Go)",
+          "unit": "hour",
+          "price": 0.1971
+        },
+        "vm_large": {
+          "label": "VM D8s v5 (8 vCPU, 32 Go)",
+          "unit": "hour",
+          "price": 0.3942
+        },
+        "db_small": {
+          "label": "PostgreSQL Flexible Server, 2 vCore",
+          "unit": "hour",
+          "price": 0.1812
+        },
+        "db_medium": {
+          "label": "PostgreSQL Flexible Server, 4 vCore",
+          "unit": "hour",
+          "price": 0.3624
+        },
+        "storage_gb": {
+          "label": "Blob Storage Hot LRS",
+          "unit": "gb_month",
+          "price": 0.0169
+        }
+      }
+    },
+    "gcp": {
+      "label": "Google Cloud",
+      "region": "Paris (europe-west9)",
+      "currency": "USD",
+      "source": "Google Cloud pricing calculator, on-demand, Linux",
+      "date": "2026-10-30",
+      "items": {
+        "vm_small": {
+          "label": "VM e2-standard-2 (2 vCPU, 8 Go)",
+          "unit": "hour",
+          "price": 0.0777
+        },
+        "vm_medium": {
+          "label": "VM n2-standard-4 (4 vCPU, 16 Go)",
+          "unit": "hour",
+          "price": 0.2253
+        },
+        "vm_large": {
+          "label": "VM n2-standard-8 (8 vCPU, 32 Go)",
+          "unit": "hour",
+          "price": 0.4506
+        },
+        "db_small": {
+          "label": "Cloud SQL Enterprise, 2 vCPU 8 Go",
+          "unit": "hour",
+          "price": 0.16
+        },
+        "db_medium": {
+          "label": "Cloud SQL Enterprise, 4 vCPU 16 Go",
+          "unit": "hour",
+          "price": 0.32
+        },
+        "storage_gb": {
+          "label": "Cloud Storage Standard",
+          "unit": "gb_month",
+          "price": 0.02
+        }
+      }
+    }
+  },
+  "llm": {
+    "currency": "USD",
+    "date": "2026-11-01",
+    "models": {
+      "claude-sonnet-5-5": {
+        "label": "Claude Sonnet 5.5",
+        "provider": "Anthropic",
+        "input_per_1m": 2,
+        "output_per_1m": 10,
+        "source": "Anthropic API pricing"
+      },
+      "claude-haiku-5-5": {
+        "label": "Claude Haiku 5.5",
+        "provider": "Anthropic",
+        "input_per_1m": 0.1,
+        "output_per_1m": 0.5,
+        "source": "Anthropic API pricing"
+      },
+      "claude-opus-5-5": {
+        "label": "Claude Opus 5.5",
+        "provider": "Anthropic",
+        "input_per_1m": 4,
+        "output_per_1m": 20,
+        "source": "Anthropic API pricing"
+      },
+      "gpt-6-1-sol": {
+        "label": "GPT-6.1 Sol",
+        "provider": "OpenAI",
+        "input_per_1m": 2,
+        "output_per_1m": 10,
+        "source": "openai.com/api/pricing"
+      },
+      "gpt-6-luna": {
+        "label": "GPT-6 Luna",
+        "provider": "OpenAI",
+        "input_per_1m": 0.1,
+        "output_per_1m": 0.5,
+        "source": "openai.com/api/pricing"
+      },
+      "gemini-3-1-pro": {
+        "label": "Gemini 3.1 Pro",
+        "provider": "Google",
+        "input_per_1m": 2,
+        "output_per_1m": 12,
+        "source": "ai.google.dev/gemini-api/docs/pricing"
+      },
+      "gemini-3-1-flash-lite": {
+        "label": "Gemini 3.1 Flash-Lite",
+        "provider": "Google",
+        "input_per_1m": 0.25,
+        "output_per_1m": 1.5,
+        "source": "ai.google.dev/gemini-api/docs/pricing"
+      }
+    },
+    "default_model": "claude-sonnet-5-5",
+    "source": "OpenRouter public model list (provider list prices)"
+  }
+}

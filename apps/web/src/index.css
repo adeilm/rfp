@@ -1,0 +1,54 @@
+@import '@fontsource-variable/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour tokens as "R G B" (tailwind.config.js reads them with an alpha). Light on :root, dark on html.dark: the dark
+   theme is its own navy built from the logo's #01093D, not the light one inverted. Every text pair passes WCAG AA in both;
+   the chart marks (brand / warn / bad, primary / brand) pass the dataviz validator's colour-blind checks on each surface. */
+@layer base {
+  :root {
+    color-scheme: light;
+    --canvas: 243 246 251;        --surface: 255 255 255;       --scrim: 15 23 42;         --shadow: 15 23 42;
+    --line: 228 233 242;          --line-strong: 201 211 227;
+    --ink: 15 23 42;              --ink-muted: 91 107 128;      --ink-faint: 148 163 184;
+    --primary: 37 87 242;         --primary-hover: 29 71 204;   --primary-soft: 234 240 255;
+    --primary-deep: 22 52 143;    --primary-fill: 37 87 242;    --primary-strong: 22 52 143;
+    --brand: 17 156 131;          --brand-soft: 227 247 241;    --brand-deep: 10 95 81;    --brand-strong: 10 95 81;
+    --warn: 217 119 6;            --warn-soft: 254 243 226;     --warn-ink: 161 74 7;
+    --bad: 196 33 33;             --bad-soft: 253 236 236;      --bad-ink: 185 28 28;      --bad-strong: 196 33 33;
+  }
+  html.dark {
+    color-scheme: dark;
+    --canvas: 10 15 36;           --surface: 18 26 53;          --scrim: 0 0 0;            --shadow: 0 0 0;
+    --line: 38 48 79;             --line-strong: 59 70 104;
+    --ink: 231 235 245;           --ink-muted: 163 174 202;     --ink-faint: 107 119 150;
+    --primary: 101 133 248;       --primary-hover: 61 99 224;   --primary-soft: 23 33 72;
+    --primary-deep: 169 188 255;  --primary-fill: 47 85 212;    --primary-strong: 42 75 194;
+    --brand: 27 168 139;          --brand-soft: 14 58 53;       --brand-deep: 95 224 195;  --brand-strong: 13 122 102;
+    --warn: 176 140 16;           --warn-soft: 58 42 18;        --warn-ink: 245 193 108;
+    --bad: 216 64 96;             --bad-soft: 61 26 29;         --bad-ink: 255 154 150;    --bad-strong: 201 64 60;
+  }
+
+  html { font-family: theme('fontFamily.sans'); color: rgb(var(--ink)); -webkit-font-smoothing: antialiased; }
+  body { @apply bg-canvas text-[14px] leading-relaxed; }
+  :focus-visible { outline: 2px solid rgb(var(--primary)); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: rgb(var(--primary) / 0.25); }
+  /* The browser's own surfaces follow the theme too. */
+  * { scrollbar-color: rgb(var(--line-strong)) transparent; }
+  input, textarea, select { caret-color: rgb(var(--primary)); }
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .card { @apply bg-surface border border-line rounded-card shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-ctl px-4 h-10 text-sm font-semibold transition-colors disabled:opacity-50; }
+  .btn-primary { @apply btn bg-primary-fill text-white hover:bg-primary-hover; }
+  .btn-secondary { @apply btn bg-surface text-primary border border-primary/30 hover:bg-primary-soft; }
+  .btn-ghost { @apply btn text-ink-muted hover:bg-canvas hover:text-ink; }
+  .btn-danger { @apply btn bg-bad-strong text-white hover:bg-bad-strong/90; }
+  .btn-sm { @apply h-8 px-3 text-[13px]; }
+  .th { @apply text-left text-[12px] font-medium text-ink-muted px-4 py-3 border-b border-line whitespace-nowrap; }
+  .td { @apply px-4 py-3.5 border-b border-line align-middle; }
+  .input { @apply h-10 w-full rounded-ctl border border-line bg-surface px-3 text-sm placeholder:text-ink-muted focus:border-primary; }
+}

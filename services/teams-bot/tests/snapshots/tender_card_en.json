@@ -1,0 +1,88 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "actions": [
+  {
+   "title": "Open tender",
+   "type": "Action.OpenUrl",
+   "url": "http://localhost:5173/tenders/T1w50xyr"
+  },
+  {
+   "data": {
+    "action": "generate_deck",
+    "tender_id": "T1w50xyr"
+   },
+   "title": "Generate deck",
+   "type": "Action.Submit"
+  },
+  {
+   "card": {
+    "actions": [
+     {
+      "data": {
+       "action": "no_bid",
+       "tender_id": "T1w50xyr"
+      },
+      "title": "Record no-bid",
+      "type": "Action.Submit"
+     }
+    ],
+    "body": [
+     {
+      "id": "reason",
+      "isMultiline": true,
+      "maxLength": 300,
+      "placeholder": "Why not bid? (3 to 300 characters)",
+      "type": "Input.Text"
+     }
+    ],
+    "type": "AdaptiveCard",
+    "version": "1.5"
+   },
+   "title": "No-bid",
+   "type": "Action.ShowCard"
+  }
+ ],
+ "body": [
+  {
+   "size": "Medium",
+   "text": "Prestations de développement d'agents LLM",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "spacing": "None",
+   "text": "T1w50xyr · CITY'UP · boamp",
+   "type": "TextBlock",
+   "wrap": true
+  },
+  {
+   "facts": [
+    {
+     "title": "Deadline",
+     "value": "2026-11-26 (26 days left)"
+    },
+    {
+     "title": "Declared budget",
+     "value": "250 000"
+    },
+    {
+     "title": "RAG fit",
+     "value": "72 / 100"
+    },
+    {
+     "title": "Requirements",
+     "value": "5 covered · 2 partial · 1 missing (1 mandatory)"
+    }
+   ],
+   "type": "FactSet"
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

@@ -1,0 +1,49 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "actions": [
+  {
+   "title": "Open deck",
+   "type": "Action.OpenUrl",
+   "url": "http://localhost:5173/decks/91002df3"
+  }
+ ],
+ "body": [
+  {
+   "color": "Good",
+   "size": "Medium",
+   "text": "Deck ready",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "spacing": "None",
+   "text": "X · T1",
+   "type": "TextBlock",
+   "wrap": true
+  },
+  {
+   "facts": [
+    {
+     "title": "[TO FILL] placeholders",
+     "value": "3"
+    }
+   ],
+   "type": "FactSet"
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "text": "Approve the prices and fill the placeholders in the editor, then export PPTX or PDF.",
+   "type": "TextBlock",
+   "wrap": true
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

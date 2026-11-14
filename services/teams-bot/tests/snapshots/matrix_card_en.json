@@ -1,0 +1,199 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "actions": [
+  {
+   "title": "Open tender",
+   "type": "Action.OpenUrl",
+   "url": "http://localhost:5173/tenders/T1w50xyr"
+  }
+ ],
+ "body": [
+  {
+   "size": "Medium",
+   "text": "Requirements matrix",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "spacing": "None",
+   "text": "Prestations de développement d'agents LLM · T1w50xyr",
+   "type": "TextBlock",
+   "wrap": true
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "✅ **Covered** — Requirement 0",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "🟡 **Partial** — Requirement 1",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "❌ **Missing** (mandatory) — Requirement 2",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "✅ **Covered** — Requirement 3",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "🟡 **Partial** — Requirement 4",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "❌ **Missing** — Requirement 5",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "✅ **Covered** — Requirement 6",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "🟡 **Partial** — Requirement 7",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "text": "Showing 8 of 12: open the tender for the rest.",
+   "type": "TextBlock",
+   "wrap": true
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

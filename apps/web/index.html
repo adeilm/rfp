@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TendOlive</title>
+    <meta name="description" content="TendOlive by OliveSoft: public tenders, matched against the company's evidence, to the proposal deck." />
+    <meta name="theme-color" content="#F3F6FB" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0A0F24" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- The theme before the first paint (same rule as src/lib/theme.ts): the saved pick, else the system setting. -->
+    <script>
+      try {
+        var t = localStorage.getItem('cstam:theme')
+        if (t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark')
+      } catch (e) {}
+    </script>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body class="bg-canvas">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

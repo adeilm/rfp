@@ -1,0 +1,260 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "body": [
+  {
+   "size": "Medium",
+   "text": "Tenders — 5 of 9",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "spacing": "None",
+   "text": "Filter: open (deadline not passed)",
+   "type": "TextBlock",
+   "wrap": true
+  },
+  {
+   "items": [
+    {
+     "text": "Prestations de développement d'agents LLM",
+     "type": "TextBlock",
+     "weight": "Bolder",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "T1w50xyr · CITY'UP · 2026-11-26 (26 days left) · RAG fit 72",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "actions": [
+      {
+       "data": {
+        "action": "tender",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Details",
+       "type": "Action.Submit"
+      },
+      {
+       "data": {
+        "action": "matrix",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Matrix",
+       "type": "Action.Submit"
+      },
+      {
+       "title": "Open tender",
+       "type": "Action.OpenUrl",
+       "url": "http://localhost:5173/tenders/T1w50xyr"
+      }
+     ],
+     "type": "ActionSet"
+    }
+   ],
+   "separator": true,
+   "spacing": "Medium",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "text": "Prestations de développement d'agents LLM",
+     "type": "TextBlock",
+     "weight": "Bolder",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "T1w50xyr · CITY'UP · 2026-11-26 (26 days left) · RAG fit 72",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "actions": [
+      {
+       "data": {
+        "action": "tender",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Details",
+       "type": "Action.Submit"
+      },
+      {
+       "data": {
+        "action": "matrix",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Matrix",
+       "type": "Action.Submit"
+      },
+      {
+       "title": "Open tender",
+       "type": "Action.OpenUrl",
+       "url": "http://localhost:5173/tenders/T1w50xyr"
+      }
+     ],
+     "type": "ActionSet"
+    }
+   ],
+   "separator": true,
+   "spacing": "Medium",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "text": "Prestations de développement d'agents LLM",
+     "type": "TextBlock",
+     "weight": "Bolder",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "T1w50xyr · CITY'UP · 2026-11-26 (26 days left) · RAG fit 72",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "actions": [
+      {
+       "data": {
+        "action": "tender",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Details",
+       "type": "Action.Submit"
+      },
+      {
+       "data": {
+        "action": "matrix",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Matrix",
+       "type": "Action.Submit"
+      },
+      {
+       "title": "Open tender",
+       "type": "Action.OpenUrl",
+       "url": "http://localhost:5173/tenders/T1w50xyr"
+      }
+     ],
+     "type": "ActionSet"
+    }
+   ],
+   "separator": true,
+   "spacing": "Medium",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "text": "Prestations de développement d'agents LLM",
+     "type": "TextBlock",
+     "weight": "Bolder",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "T1w50xyr · CITY'UP · 2026-11-26 (26 days left) · RAG fit 72",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "actions": [
+      {
+       "data": {
+        "action": "tender",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Details",
+       "type": "Action.Submit"
+      },
+      {
+       "data": {
+        "action": "matrix",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Matrix",
+       "type": "Action.Submit"
+      },
+      {
+       "title": "Open tender",
+       "type": "Action.OpenUrl",
+       "url": "http://localhost:5173/tenders/T1w50xyr"
+      }
+     ],
+     "type": "ActionSet"
+    }
+   ],
+   "separator": true,
+   "spacing": "Medium",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "text": "Prestations de développement d'agents LLM",
+     "type": "TextBlock",
+     "weight": "Bolder",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "T1w50xyr · CITY'UP · 2026-11-26 (26 days left) · RAG fit 72",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "actions": [
+      {
+       "data": {
+        "action": "tender",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Details",
+       "type": "Action.Submit"
+      },
+      {
+       "data": {
+        "action": "matrix",
+        "tender_id": "T1w50xyr"
+       },
+       "title": "Matrix",
+       "type": "Action.Submit"
+      },
+      {
+       "title": "Open tender",
+       "type": "Action.OpenUrl",
+       "url": "http://localhost:5173/tenders/T1w50xyr"
+      }
+     ],
+     "type": "ActionSet"
+    }
+   ],
+   "separator": true,
+   "spacing": "Medium",
+   "type": "Container"
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

@@ -1,0 +1,11 @@
+node_modules
+dist
+tsconfig.tsbuildinfo
+*.log
+Dockerfile
+.dockerignore
+
+# editor and OS files
+.vscode
+.idea
+.DS_Store

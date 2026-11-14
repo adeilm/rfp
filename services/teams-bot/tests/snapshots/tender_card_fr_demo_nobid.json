@@ -1,0 +1,62 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "actions": [
+  {
+   "title": "Ouvrir",
+   "type": "Action.OpenUrl",
+   "url": "http://localhost:5173/tenders/T1w50xyr"
+  },
+  {
+   "title": "Avis",
+   "type": "Action.OpenUrl",
+   "url": "https://www.boamp.fr/x"
+  }
+ ],
+ "body": [
+  {
+   "size": "Medium",
+   "text": "Prestations de développement d'agents LLM (démo)",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "isSubtle": true,
+   "size": "Small",
+   "spacing": "None",
+   "text": "T1w50xyr · CITY'UP · boamp",
+   "type": "TextBlock",
+   "wrap": true
+  },
+  {
+   "facts": [
+    {
+     "title": "Date limite",
+     "value": "2026-11-26 (26 jours restants)"
+    },
+    {
+     "title": "Budget déclaré",
+     "value": "250 000"
+    },
+    {
+     "title": "Adéquation RAG",
+     "value": "72 / 100"
+    },
+    {
+     "title": "Exigences",
+     "value": "5 couvertes · 2 partielles · 1 manquantes (1 obligatoires)"
+    },
+    {
+     "title": "Décision",
+     "value": "No-bid: hors périmètre"
+    }
+   ],
+   "type": "FactSet"
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

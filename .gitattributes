@@ -1,0 +1,22 @@
+# Shell scripts run inside Linux containers: keep LF line endings on every checkout (Windows included)
+*.sh text eol=lf
+docker/** text eol=lf
+*.pptx binary
+*.pdf binary
+
+# Windows launcher of the studio: keep CRLF so cmd.exe runs it
+*.bat text eol=crlf
+
+# Binary files: never diffed or line-ending converted
+*.png binary
+*.jpg binary
+*.ico binary
+*.xlsx binary
+*.docx binary
+*.woff2 binary
+
+# GitHub language statistics and diffs: third-party and generated files
+services/proposal-studio/static/vendor/** linguist-vendored
+n8n/dist/** linguist-generated
+services/proposal-studio/workflows/*.json linguist-generated
+services/rag/benchmark/results.* linguist-generated

@@ -1,0 +1,240 @@
+{
+  "I01": {
+    "tender_id": "Ti3lvwe",
+    "requirement": "Fourniture, déploiement et maintenance d'une solution CRM",
+    "status": "covered",
+    "best_doc": "olivesoft_Project_Story_Fashion_CRM",
+    "quote": null,
+    "docs": [
+      "olivesoft_Project_Story_Fashion_CRM",
+      "olivesoft_Project_PIPL_CRM",
+      "olivesoft_Project_Story_Retail_Customer_Intelligence"
+    ]
+  },
+  "I02": {
+    "tender_id": "Ti3lvwe",
+    "requirement": "marketing automation",
+    "status": "covered",
+    "best_doc": "CV_08_Lucas_Reed.pdf",
+    "quote": "Certified Platform Developer I, Marketing Cloud Email Specialist, Marketing Cloud Engagement Developer and Agentforce Specialist.",
+    "docs": [
+      "CV_08_Lucas_Reed.pdf",
+      "olivesoft_Stack_Salesforce_Ecosystem"
+    ]
+  },
+  "I03": {
+    "tender_id": "Ti3lvwe",
+    "requirement": "Provide a list of comparable services performed over the last 3 years",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I04": {
+    "tender_id": "Tpuurmk",
+    "requirement": "Tierce maintenance applicative du portail PREVAIR",
+    "status": "partial",
+    "best_doc": "CV_05_Sofia_Nguyen.pdf",
+    "quote": "Predictive Maintenance for Industrial Equipment Jan 2021 – Jun 2021",
+    "docs": [
+      "CV_05_Sofia_Nguyen.pdf",
+      "CV_14_Henry_Price.pdf",
+      "CV_13_Isabella_Ross.pdf"
+    ]
+  },
+  "I05": {
+    "tender_id": "Tpuurmk",
+    "requirement": "Corrective",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I06": {
+    "tender_id": "Tpuurmk",
+    "requirement": "preventive",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I07": {
+    "tender_id": "Tpuurmk",
+    "requirement": "adaptive",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I08": {
+    "tender_id": "Tpuurmk",
+    "requirement": "evolutionary maintenance",
+    "status": "partial",
+    "best_doc": "CV_09_Emma_Foster.pdf",
+    "quote": "Created documentation for ETL processes, improving knowledge transfer within the team.",
+    "docs": [
+      "CV_09_Emma_Foster.pdf",
+      "CV_02_Liam_Carter.pdf",
+      "CV_15_Zoe_Walker.pdf"
+    ]
+  },
+  "I09": {
+    "tender_id": "B26-103489",
+    "requirement": "sécurisation et résilience des infrastructures",
+    "status": "partial",
+    "best_doc": "CV_03_Maya_Patel.pdf",
+    "quote": "Resource-Optimized Kubeflow Platform Jan 2025 – Apr 2025",
+    "docs": [
+      "CV_03_Maya_Patel.pdf"
+    ]
+  },
+  "I10": {
+    "tender_id": "B26-103489",
+    "requirement": "cartographie des systèmes d'information",
+    "status": "partial",
+    "best_doc": "olivesoft_Project_Story_Unified_HR",
+    "quote": null,
+    "docs": [
+      "olivesoft_Project_Story_Unified_HR",
+      "CV_17_Julian_Hayes.pdf",
+      "CV_07_Olivia_Morris.pdf"
+    ]
+  },
+  "I11": {
+    "tender_id": "B26-103489",
+    "requirement": "sensibilisation et campagne de phishing",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I12": {
+    "tender_id": "B26-103489",
+    "requirement": "solutions de gestion de crise et collaborative",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I13": {
+    "tender_id": "B26-95871",
+    "requirement": "sites et extranets sous Typo3 et Symfony",
+    "status": "partial",
+    "best_doc": "CV_01_Ava_Thompson.pdf",
+    "quote": "Cloud Platforms: AWS, Microsoft Azure, Google Cloud",
+    "docs": [
+      "CV_01_Ava_Thompson.pdf"
+    ]
+  },
+  "I14": {
+    "tender_id": "B26-95871",
+    "requirement": "développement web",
+    "status": "covered",
+    "best_doc": "CV_02_Liam_Carter.pdf",
+    "quote": "Volunteer Web Developer – Local NGO “TechForAll” July 2019 – December 2020",
+    "docs": [
+      "CV_02_Liam_Carter.pdf",
+      "CV_16_Nora_Ellis.pdf",
+      "CV_14_Henry_Price.pdf"
+    ]
+  },
+  "I15": {
+    "tender_id": "B26-95871",
+    "requirement": "architecture logicielle et applicative",
+    "status": "partial",
+    "best_doc": "CV_17_Julian_Hayes.pdf",
+    "quote": "Designed a 5-year network-architecture roadmap that supported a 40 % increase in subscriber base while maintaining SLA compliance.",
+    "docs": [
+      "CV_17_Julian_Hayes.pdf",
+      "olivesoft_Tool_Architecture_Framework",
+      "CV_16_Nora_Ellis.pdf"
+    ]
+  },
+  "I16": {
+    "tender_id": "B26-95871",
+    "requirement": "Tierce Maintenance Applicative (TMA)",
+    "status": "partial",
+    "best_doc": "CV_09_Emma_Foster.pdf",
+    "quote": "Predictive Maintenance for Industrial Sensors January 2023 – June 2023",
+    "docs": [
+      "CV_09_Emma_Foster.pdf",
+      "CV_05_Sofia_Nguyen.pdf",
+      "CV_15_Zoe_Walker.pdf"
+    ]
+  },
+  "I17": {
+    "tender_id": "B26-95871",
+    "requirement": "Hébergement, infogérance, sécurisation et maintenance logicielle de la plateforme technique",
+    "status": "partial",
+    "best_doc": "CV_03_Maya_Patel.pdf",
+    "quote": "Introduced DevSecOps scanning (Trivy, Checkov) that reduced security vulnerabilities by 45 % in the first quarter.",
+    "docs": [
+      "CV_03_Maya_Patel.pdf",
+      "CV_14_Henry_Price.pdf",
+      "CV_16_Nora_Ellis.pdf"
+    ]
+  },
+  "I18": {
+    "tender_id": "B26-91706",
+    "requirement": "Tierce Maintenance Applicative (TMA) du parc applicatif Low Code Outsystems",
+    "status": "partial",
+    "best_doc": "CV_09_Emma_Foster.pdf",
+    "quote": "Predictive Maintenance for Industrial Sensors January 2023 – June 2023",
+    "docs": [
+      "CV_09_Emma_Foster.pdf",
+      "CV_03_Maya_Patel.pdf",
+      "CV_02_Liam_Carter.pdf"
+    ]
+  },
+  "I19": {
+    "tender_id": "B26-91706",
+    "requirement": "assistance à la recette",
+    "status": "covered",
+    "best_doc": "CV_12_Mateo_Silva.pdf",
+    "quote": "Conducted acceptance testing for 15+ production releases, maintaining a post-release defect rate below 1 %.",
+    "docs": [
+      "CV_12_Mateo_Silva.pdf",
+      "CV_10_Daniel_Kim.pdf",
+      "CV_04_Noah_Bennett.pdf"
+    ]
+  },
+  "I20": {
+    "tender_id": "B26-91706",
+    "requirement": "sécurité des systèmes d'information",
+    "status": "partial",
+    "best_doc": "CV_03_Maya_Patel.pdf",
+    "quote": "Developed an architecture enabling the DES unit to launch MLOps projects with a 50 % reduction in setup time.",
+    "docs": [
+      "CV_03_Maya_Patel.pdf",
+      "olivesoft_Project_Azure_AKS_GitOps"
+    ]
+  },
+  "I21": {
+    "tender_id": "B26-91706",
+    "requirement": "optimisation de l'architecture",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  },
+  "I22": {
+    "tender_id": "B26-104570",
+    "requirement": "Hébergement du système billettique",
+    "status": "partial",
+    "best_doc": "CV_14_Henry_Price.pdf",
+    "quote": "Managed a 4-person team to launch an online booking platform, reaching 10 k registered users within the first 3 months.",
+    "docs": [
+      "CV_14_Henry_Price.pdf",
+      "CV_12_Mateo_Silva.pdf",
+      "CV_17_Julian_Hayes.pdf"
+    ]
+  },
+  "I23": {
+    "tender_id": "B26-104570",
+    "requirement": "administration technique et fonctionnelle du système billettique",
+    "status": "missing",
+    "best_doc": null,
+    "quote": null,
+    "docs": []
+  }
+}

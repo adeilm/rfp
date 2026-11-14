@@ -1,0 +1,55 @@
+{
+  "description": "Independent test set: 6 real BOAMP tenders never used to develop or tune the matching (none is in real_tenders.json). Requirement lines are the words of the notice (BOAMP gives the notice only, not the full specification): 'notice' = a sentence or phrase of the notice body, 'title' = the notice title, 'n8n' = the line the pipeline's analysis LLM sent to the RAG for that tender (kept as sent). No line was written or reworded for this set.",
+  "collected_on": "2026-10-30",
+  "source": "BOAMP open data API (boamp-datadila.opendatasoft.com, dataset boamp) and the tenders store of the running system (Ti3lvwe, Tpuurmk)",
+  "data_mode": "company",
+  "tenders": [
+    {"tender_id": "Ti3lvwe", "boamp_id": "26-105711", "title": "Fourniture, le déploiement, la maintenance et l'accompagnement d'une solution CRM et de marketing automation", "buyer": "HAUTS-DE-FRANCE TOURISME",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-105711",
+     "requirements": [
+       {"id": "I01", "category": "technical", "text": "Fourniture, déploiement et maintenance d'une solution CRM", "from": "title"},
+       {"id": "I02", "category": "technical", "text": "marketing automation", "from": "title"},
+       {"id": "I03", "category": "experience", "text": "Provide a list of comparable services performed over the last 3 years", "from": "n8n"}
+     ]},
+    {"tender_id": "Tpuurmk", "boamp_id": "26-105289", "title": "ACCORD-CADRE RELATIF AUX PRESTATIONS DE TIERCE MAINTENANCE APPLICATIVE DU PORTAIL PREVAIR", "buyer": "INERIS",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-105289",
+     "requirements": [
+       {"id": "I04", "category": "technical", "text": "Tierce maintenance applicative du portail PREVAIR", "from": "title"},
+       {"id": "I05", "category": "technical", "text": "Corrective", "from": "n8n"},
+       {"id": "I06", "category": "technical", "text": "preventive", "from": "n8n"},
+       {"id": "I07", "category": "technical", "text": "adaptive", "from": "n8n"},
+       {"id": "I08", "category": "technical", "text": "evolutionary maintenance", "from": "n8n"}
+     ]},
+    {"tender_id": "B26-103489", "boamp_id": "26-103489", "title": "Marché public de prestations de services en cybersécurité des systèmes d'information", "buyer": "Gip Grades Corse e-santé",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-103489",
+     "requirements": [
+       {"id": "I09", "category": "technical", "text": "sécurisation et résilience des infrastructures", "from": "notice"},
+       {"id": "I10", "category": "technical", "text": "cartographie des systèmes d'information", "from": "notice (lot 1: 'services de sécurisation, résilience des infrastructures et de cartographie')"},
+       {"id": "I11", "category": "technical", "text": "sensibilisation et campagne de phishing", "from": "notice"},
+       {"id": "I12", "category": "technical", "text": "solutions de gestion de crise et collaborative", "from": "notice"}
+     ]},
+    {"tender_id": "B26-95871", "boamp_id": "26-95871", "title": "Maintenance, hébergement et développements des sites et applicatifs web du Département de la Vendée", "buyer": "Département de la Vendée",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-95871",
+     "requirements": [
+       {"id": "I13", "category": "technical", "text": "sites et extranets sous Typo3 et Symfony", "from": "notice"},
+       {"id": "I14", "category": "technical", "text": "développement web", "from": "notice"},
+       {"id": "I15", "category": "technical", "text": "architecture logicielle et applicative", "from": "notice"},
+       {"id": "I16", "category": "technical", "text": "Tierce Maintenance Applicative (TMA)", "from": "notice"},
+       {"id": "I17", "category": "technical", "text": "Hébergement, infogérance, sécurisation et maintenance logicielle de la plateforme technique", "from": "notice"}
+     ]},
+    {"tender_id": "B26-91706", "boamp_id": "26-91706", "title": "Tierce Maintenance Applicative (TMA) du parc applicatif Low Code Outsystems", "buyer": "Agence de la biomédecine",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-91706",
+     "requirements": [
+       {"id": "I18", "category": "technical", "text": "Tierce Maintenance Applicative (TMA) du parc applicatif Low Code Outsystems", "from": "title"},
+       {"id": "I19", "category": "technical", "text": "assistance à la recette", "from": "notice"},
+       {"id": "I20", "category": "technical", "text": "sécurité des systèmes d'information", "from": "notice"},
+       {"id": "I21", "category": "technical", "text": "optimisation de l'architecture", "from": "notice"}
+     ]},
+    {"tender_id": "B26-104570", "boamp_id": "26-104570", "title": "Hébergement, administration technique et fonctionnelle du système billettique des réseaux routiers régionaux", "buyer": "Région Nouvelle-Aquitaine",
+     "url": "https://www.boamp.fr/pages/avis/?q=idweb:26-104570",
+     "requirements": [
+       {"id": "I22", "category": "technical", "text": "Hébergement du système billettique", "from": "title"},
+       {"id": "I23", "category": "technical", "text": "administration technique et fonctionnelle du système billettique", "from": "notice"}
+     ]}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "DRAFT labels proposed by the AI assistant from the knowledge base documents (knowledge-base/cvs PDFs read with pdftotext, knowledge-base/projects and tech_stacks JSON), written BEFORE the matching system was run on these lines and without reading its stored answers. Not ground truth: every label is NEEDS_REVIEW until a person checks it in the sheet. Same policy as real_tenders.json (covered = a document clearly proves the line as written; partial = related evidence or an equivalent technology; missing = no document proves it; administrative lines are missing).",
+  "labelled_on": "2026-10-30",
+  "labelled_by": "AI assistant (draft)",
+  "labels": {
+    "I01": {"expected": "covered", "evidence": "olivesoft_Project_Distributor_Salesforce_CRM", "location": "scope", "why": "Completed project: 'CRM set-up, data onboarding of 3 000+ records, Flow Builder automation, permission sets and SSO'. Also olivesoft_Stack_Salesforce_Ecosystem."},
+    "I02": {"expected": "partial", "evidence": "CV_08_Lucas_Reed.pdf", "location": "Certifications / Platforms lines", "why": "'Marketing Cloud Email Specialist' certification and 'Platforms: ... Marketing Cloud'; no delivered marketing automation project.", "doubt": "certification without a project: partial or covered?"},
+    "I03": {"expected": "missing", "evidence": "", "location": "", "why": "Administrative: a list of references to provide with the bid, not a capability (policy of real_tenders.json).", "doubt": "could be read as 'comparable CRM projects in the last 3 years' (Distributor CRM, BoondManager migration 2024): covered under that reading"},
+    "I04": {"expected": "missing", "evidence": "", "location": "", "why": "No application maintenance (TMA) of a portal in any CV or project. 'Predictive maintenance' (CV_05, 07, 09, 17) is a machine-learning use case, not application maintenance: a false-positive trap."},
+    "I05": {"expected": "missing", "evidence": "", "location": "", "why": "Fragment of 'corrective maintenance'; no document mentions corrective maintenance of applications."},
+    "I06": {"expected": "missing", "evidence": "", "location": "", "why": "Fragment of 'preventive maintenance'; 'predictive maintenance' ML projects do not prove it."},
+    "I07": {"expected": "missing", "evidence": "", "location": "", "why": "Fragment of 'adaptive maintenance'; no evidence."},
+    "I08": {"expected": "missing", "evidence": "", "location": "", "why": "No evolutionary maintenance of applications in the documents."},
+    "I09": {"expected": "partial", "evidence": "CV_03_Maya_Patel.pdf; olivesoft_Project_Azure_AKS_GitOps", "location": "Experience ('DevSecOps scanning (Trivy, Checkov)'); outcomes ('99.95 % uptime')", "why": "Infrastructure security hardening and high availability on cloud platforms, not a security-services offer for health facilities.", "doubt": "partial or missing"},
+    "I10": {"expected": "partial", "evidence": "olivesoft_Project_CMDB_ITSM; CV_08_Lucas_Reed.pdf", "location": "description ('centralised CMDB ... 150+ IT assets')", "why": "An IT asset inventory (CMDB) is related to an information-system map, not a security cartography.", "doubt": "partial or missing"},
+    "I11": {"expected": "missing", "evidence": "", "location": "", "why": "No security awareness or phishing campaign in any document."},
+    "I12": {"expected": "missing", "evidence": "", "location": "", "why": "No crisis-management or collaboration solution in any document."},
+    "I13": {"expected": "partial", "evidence": "CV_02_Liam_Carter.pdf", "location": "Profile and Experience ('web applications using PHP, HTML')", "why": "PHP web development, the language of Symfony and Typo3, but neither framework is named.", "doubt": "partial (equivalent technology) or missing"},
+    "I14": {"expected": "covered", "evidence": "CV_02_Liam_Carter.pdf", "location": "Experience ('12+ client-facing web modules using PHP, HTML5, and JavaScript')", "why": "Web application development stated with results."},
+    "I15": {"expected": "partial", "evidence": "CV_17_Julian_Hayes.pdf; olivesoft_Project_Azure_AKS_GitOps", "location": "Profile ('enterprise architecture'); scope ('AKS architecture')", "why": "Enterprise and platform architecture, not software / application architecture of web sites.", "doubt": "partial or missing"},
+    "I16": {"expected": "missing", "evidence": "", "location": "", "why": "No TMA in the documents (see I04)."},
+    "I17": {"expected": "partial", "evidence": "olivesoft_Project_Azure_AKS_GitOps; olivesoft_Project_Microservice_Infrastructure", "location": "scope", "why": "Cloud platform operation and monitoring (Docker micro-service infrastructure and monitoring); no managed hosting (infogérance) of a web platform.", "doubt": "partial or missing"},
+    "I18": {"expected": "partial", "evidence": "olivesoft_Project_Contacts_Mobile_App", "location": "technologies ('power platform')", "why": "Low-code delivery on Microsoft Power Platform, not OutSystems; no TMA.", "doubt": "partial (another low-code platform) or missing (TMA of OutSystems)"},
+    "I19": {"expected": "covered", "evidence": "CV_12_Mateo_Silva.pdf; CV_04_Noah_Bennett.pdf", "location": "Experience ('acceptance testing for 15+ production releases'); Profile ('... to UAT')", "why": "User acceptance testing done by product owners."},
+    "I20": {"expected": "partial", "evidence": "CV_03_Maya_Patel.pdf; CV_16_Nora_Ellis.pdf", "location": "Experience (DevSecOps scanning; OAuth2 authentication)", "why": "Security practices in delivery, no information-security service or certificate (ISO 27001).", "doubt": "partial or missing"},
+    "I21": {"expected": "partial", "evidence": "olivesoft_Project_Azure_AKS_GitOps", "location": "scope / outcomes", "why": "Architecture work with measured gains on a cloud platform; not an OutSystems application architecture.", "doubt": "partial or covered"},
+    "I22": {"expected": "missing", "evidence": "", "location": "", "why": "No hosting of a ticketing (billettique) system."},
+    "I23": {"expected": "missing", "evidence": "", "location": "", "why": "No administration of a ticketing system."}
+  }
+}

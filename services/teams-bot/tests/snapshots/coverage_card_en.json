@@ -1,0 +1,93 @@
+{
+ "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+ "body": [
+  {
+   "size": "Medium",
+   "text": "Knowledge base check",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "✅ **Covered** — Requirement 0",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "🟡 **Partial** — Requirement 1",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "items": [
+    {
+     "size": "Small",
+     "text": "❌ **Missing** (mandatory) — Requirement 2",
+     "type": "TextBlock",
+     "wrap": true
+    },
+    {
+     "isSubtle": true,
+     "size": "Small",
+     "spacing": "None",
+     "text": "CV_13_Isabella_Ross.pdf",
+     "type": "TextBlock",
+     "wrap": true
+    }
+   ],
+   "spacing": "Small",
+   "type": "Container"
+  },
+  {
+   "spacing": "Medium",
+   "text": "Proposed team",
+   "type": "TextBlock",
+   "weight": "Bolder",
+   "wrap": true
+  },
+  {
+   "facts": [
+    {
+     "title": "Julian Hayes",
+     "value": "Project Manager · PMP"
+    }
+   ],
+   "type": "FactSet"
+  }
+ ],
+ "msteams": {
+  "width": "Full"
+ },
+ "type": "AdaptiveCard",
+ "version": "1.5"
+}

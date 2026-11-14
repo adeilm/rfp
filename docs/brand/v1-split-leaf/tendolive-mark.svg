@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="TendOlive">
+  <g>
+    <defs>
+      <linearGradient id="mg" x1="8" y1="4" x2="40" y2="46" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4BE3AE"/><stop offset="1" stop-color="#12D6D2"/></linearGradient>
+      <clipPath id="mleaf"><path d="M24 3C35.5 9.5 42 19.5 42 29.5 42 38.6 34.2 45 24 45S6 38.6 6 29.5C6 19.5 12.5 9.5 24 3Z"/></clipPath>
+      <mask id="mveins" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48"><rect width="48" height="48" fill="#fff"/>
+        <g fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round"><path d="M25.4 22C30.8 21 36 18 40 13"/><path d="M25.4 34C31.8 33 38.5 29.5 43 24"/></g></mask>
+    </defs>
+    <g clip-path="url(#mleaf)" fill="url(#mg)">
+      <rect y="9" width="22.6" height="3.8" rx="1.9"/><rect y="15.4" width="22.6" height="3.8" rx="1.9"/><rect y="21.8" width="22.6" height="3.8" rx="1.9"/>
+      <rect y="28.2" width="22.6" height="3.8" rx="1.9"/><rect y="34.6" width="22.6" height="3.8" rx="1.9"/><rect x="14" y="41" width="8.6" height="3.8" rx="1.9"/>
+      <path d="M25.4 0H48V48H25.4Z" mask="url(#mveins)"/>
+    </g>
+  </g>
+</svg>

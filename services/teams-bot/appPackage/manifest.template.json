@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "1.0.0",
+  "id": "{{BOT_APP_ID}}",
+  "developer": {
+    "name": "OliveSoft",
+    "websiteUrl": "{{WEBSITE_URL}}",
+    "privacyUrl": "{{WEBSITE_URL}}",
+    "termsOfUseUrl": "{{WEBSITE_URL}}"
+  },
+  "name": { "short": "TendOlive", "full": "TendOlive tender assistant" },
+  "description": {
+    "short": "Ask about public tenders, their fit and gaps, and start proposal decks.",
+    "full": "TendOlive answers from OliveSoft's tender pipeline: the tenders found and analysed, their requirements matrix, proposed team, knowledge gaps, buyer research and market study. Approvers can start a proposal deck, refine a slide or record a no-bid, and the bot posts new fit tenders and finished decks in a channel."
+  },
+  "icons": { "color": "color.png", "outline": "outline.png" },
+  "accentColor": "#0B1F3A",
+  "supportsChannelFeatures": "tier1",
+  "bots": [
+    {
+      "botId": "{{BOT_APP_ID}}",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal", "team", "groupChat"],
+          "commands": [
+            { "title": "tenders", "description": "The best open tenders, by fit" },
+            { "title": "status", "description": "The latest proposal decks" },
+            { "title": "help", "description": "What you can ask" },
+            { "title": "alerts here", "description": "Post new fit tenders in this conversation (approvers)" },
+            { "title": "whoami", "description": "Your Entra object id (for TEAMS_APPROVER_USERS)" }
+          ]
+        }
+      ]
+    }
+  ],
+  "validDomains": []
+}

@@ -1,0 +1,59 @@
+# Fast checks on every push and pull request to main: the suites that need no Docker image, no model download and
+# no API key. The RAG and studio Python suites run in the docker compose images (see tests/README.md).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pipeline:
+    name: n8n pipeline (edge cases, studio adapter)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build the workflows from n8n/src
+        working-directory: n8n
+        run: node build.js
+      - name: Edge cases
+        working-directory: n8n
+        run: node test/edge_cases.js
+      - name: Studio adapter
+        working-directory: n8n
+        run: STUDIO_DIR="$GITHUB_WORKSPACE/services/proposal-studio" node test/studio_adapter.test.js
+
+  deck-agents:
+    name: Deck agents (Node tests, embedded workflow check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Agent tests
+        working-directory: services/proposal-studio
+        run: node --test agents/tests/*.test.js
+      - name: Workflows match agents/lib
+        run: node services/proposal-studio/agents/tools/embed_check.js
+
+  web:
+    name: Web app (type check and build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install
+        working-directory: apps/web
+        run: npm ci
+      - name: tsc -b and vite build
+        working-directory: apps/web
+        run: npm run build

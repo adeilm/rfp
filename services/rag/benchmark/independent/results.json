@@ -1,0 +1,64 @@
+{
+  "n": 20,
+  "accuracy": 0.8,
+  "per_class": {
+    "covered": {
+      "support": 3,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+    },
+    "partial": {
+      "support": 8,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "missing": {
+      "support": 9,
+      "precision": 0.875,
+      "recall": 0.7777777777777778,
+      "f1": 0.823529411764706
+    }
+  },
+  "confusion": {
+    "covered": {
+      "covered": 3,
+      "partial": 0,
+      "missing": 0
+    },
+    "partial": {
+      "covered": 1,
+      "partial": 6,
+      "missing": 1
+    },
+    "missing": {
+      "covered": 0,
+      "partial": 2,
+      "missing": 7
+    }
+  },
+  "errors": {
+    "None": 16,
+    "Incorrect Partial": 1,
+    "False Positive": 2,
+    "False Negative": 1
+  },
+  "evidence_accuracy": {
+    "rows": 10,
+    "correct": 3
+  },
+  "precision@3": 0.2,
+  "recall@3": 0.3,
+  "retrieval_rows": 10,
+  "by_language": {
+    "en": {
+      "n": 6,
+      "accuracy": 0.6666666666666666
+    },
+    "fr": {
+      "n": 14,
+      "accuracy": 0.8571428571428571
+    }
+  }
+}
