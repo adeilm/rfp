@@ -50,7 +50,7 @@ Depending on how n8n is running, use the appropriate base URL:
 3. Fill in:
    - **Credential Name**: `Studio`
    - **Name**: `X-API-Key`
-   - **Value**: Your studio key (see `START_HERE.md` for the shared local dev key).
+   - **Value**: Your studio key (see `START_HERE.md` for the default local dev key).
 4. Save the credential.
 
 ### Credential 2: Groq Cloud API [Verified]
@@ -119,5 +119,5 @@ Build a simple test workflow in n8n to verify communication with the Studio:
 
 When your agent workflow is ready:
 1. In n8n, click the three-dot menu `...` > **Download** / **Export**.
-2. Save the exported JSON file to `workflows/` (e.g. `workflows/credibility.json`).
+2. Save the exported JSON file to `workflows/custom/` (the generated workflows in `workflows/` are never edited by hand).
 3. **CRITICAL SECURITY RULE**: Ensure no private API keys or tokens are stored in the workflow JSON before committing or sharing.

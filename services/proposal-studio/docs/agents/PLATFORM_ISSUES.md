@@ -11,7 +11,7 @@ This document tracks issues found in the platform that existed before agent deve
 **Details:**
 - File: `rfp-slide-deck-studio-claude-source.tar.gz` (179 KB)
 - Test expects: Archives should be in `../dist/` not project root
-- Status: Pre-existing (part of original v1.0.0 handoff)
+- Status: Pre-existing (part of v1.0.0)
 - Impact: None on functionality, cosmetic test failure
 
 **Evidence:**

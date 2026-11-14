@@ -1949,7 +1949,7 @@ C(A4, 'All requirements missing', 'RAG answers the 4 rows with status missing an
   return `coverage ${r.rag.coverage}, blocking ${r.rag.blocking.map(b => b.slice(0, 2))}, recommendation ${p.matrix.summary.recommendation}`;
 });
 C(A4, 'Mandatory non-technical gap', 'R1, R2 covered; R3 (mandatory experience) missing; R4 (team, optional) partial; RAG warning "BLOCKING - …"',
-  'blocking = R3 only (our mandatory flags, not the RAG\'s "every row mandatory"); RAG warning kept; recommendation bid_with_partner', 'RG2, PR1', async ok => {
+  'blocking = R3 only (the pipeline\'s mandatory flags, not the RAG\'s "every row mandatory"); RAG warning kept; recommendation bid_with_partner', 'RG2, PR1', async ok => {
     const r = await joinRag(ragTender(), ragAnswer(statuses('covered', 'covered', 'missing', 'partial'), { warnings: ['BLOCKING - mandatory requirement without evidence: At least 2 references'] }));
     ok(r.rag.blocking.length === 1 && r.rag.blocking[0].startsWith('R3') && r.rag.warnings.some(w => /^BLOCKING/.test(w)), 'blocking R3');
     const p = await proposal(r); ok(p.matrix.summary.recommendation === 'bid_with_partner', 'bid_with_partner');
@@ -1974,7 +1974,7 @@ C(A4, 'Everything covered (control)', 'RAG answers the 4 rows covered', 'recomme
   return `recommendation ${p.matrix.summary.recommendation}, rag ${p.rag.status}, relevance ${p.analysis.relevance_score}`;
 });
 C(A4, 'RAG v2: CV quote, company declaration, demo record, team and gaps', 'RAG answer (format of 2026-10-20): R1 proved by a CV quote, R2 by a company record (statement, no quote), R3 by a FICTIONAL demo record, R4 missing; team_proposal with 1 unfilled place; knowledge_gaps for R4',
-  'each row keeps its origin; the declaration is shown as a declaration (never as a quote); the demo row is listed in demo_evidence and raises a risk; team proposal and gaps reach the proposal input with our requirement ids', 'RG2, PR1', async ok => {
+  'each row keeps its origin; the declaration is shown as a declaration (never as a quote); the demo row is listed in demo_evidence and raises a risk; team proposal and gaps reach the proposal input with the pipeline\'s requirement ids', 'RG2, PR1', async ok => {
     const st = 'Name: Citizen app platform\nDescription: Built and hosts the citizen app of three municipalities.\nSector: public';
     const rows = [ragRow(REQS[0], 'covered', { origin: 'cv_document' }), ragRow(REQS[1], 'covered', { origin: 'user_entered', evidence: null, statement: st }),
       ragRow(REQS[2], 'covered', { origin: 'demo', evidence: null, statement: 'Name: Ministry portal\nDescription: Fictional licensing portal for a ministry.' }), ragRow(REQS[3], 'missing')];

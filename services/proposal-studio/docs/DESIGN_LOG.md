@@ -1,4 +1,4 @@
-# Project Handover & Context Guide (AI / IDE Agent Knowledge Base)
+# Design Log & Context Guide (AI / IDE Agent Knowledge Base)
 
 > Historical design log written before v1.0.0. For current facts use [`README.md`](../README.md)
 > (API, deck spec, layout) and [`CHANGELOG.md`](../CHANGELOG.md). Index of all docs: [`docs/README.md`](README.md).
@@ -17,7 +17,7 @@
   - **Backend**: Python standard-library HTTP server (`http.server.BaseHTTPRequestHandler`) without heavyweight web frameworks (no FastAPI/Flask/Django).
   - **Frontend**: Vanilla JavaScript (ES6+), HTML5, and CSS3. **Strictly no React, Vue, build steps, bundlers, or TailwindCSS**.
   - **Zero Regressions**: Legacy saves and project JSONs must always load cleanly.
-- **Team Motto**: *"Agents write. Code checks. Human approves."*
+- **Motto**: *"Agents write. Code checks. Human approves."*
 
 ---
 
@@ -81,22 +81,19 @@
 - **UI Integration (`index.html`)**:
   - Interactive color pickers for background, primary, and secondary colors, plus a detected font dropdown so users can visually verify and adjust extracted colors before creating the RFP deck.
 
-### Handoff Pack (before Phase 7): Onboarding & Credibility Agent 5 Brief
+### Phase 6.5 (before Phase 7): Test Inputs, Launchers & Tooling
 - **Canonical Test Inputs (`tests/inputs/`, `tests/credibility/`, `tests/diagram/`)**:
   - Source of truth inputs for all agents: `software.json`, `non_software.json`, `thin.json`, `injection.json`, `many_projects.json`.
   - Verified with `tests/check_inputs.py` for schema compliance, role numbers, and cross-folder byte-level parity.
 - **Launcher Scripts**:
-  - `start.sh` (macOS/Linux) and `start.bat` (Windows): defaults `STUDIO_API_KEY` to the shared local dev key (see `START_HERE.md`) if unset, supports custom port `${1:-8091}`, logs URL and header name `X-API-Key` without leaking keys.
+  - `start.sh` (macOS/Linux) and `start.bat` (Windows): defaults `STUDIO_API_KEY` to the default local dev key (see `START_HERE.md`) if unset, supports custom port `${1:-8091}`, logs URL and header name `X-API-Key` without leaking keys.
 - **LLM Verification Tool (`tools/check_llm.py`, `tests/test_check_llm.py`)**:
   - Standard-library tool verifying Groq API connectivity and models using strict `response_format: {"type": "json_object"}`.
   - Supports `GROQ_BASE_URL` for local mock tests.
   - Clear, single-line error messages for missing env variables (instructing terminal `export` / `set`), 401 (invalid key), 400/404 (model not found), 429 (`Retry-After`), and network timeouts.
 - **Documentation**:
   - `docs/N8N_SETUP.md`: Complete beginner setup guide for n8n (npm/Docker, network URLs, Header Auth credentials, retry on 429).
-  - `docs/AGENT5_BRIEF.md`: Full specification for Agent 5 (Credibility / "Why Us"): deterministic JavaScript checks, project ranking on `many_projects.json`, LLM prompt guardrails, and platform verification.
-  - `START_HERE.md`: Quickstart onboarding guide with verified curl commands.
-- **Handoff Archive (`rfp-studio-handoff.tar.gz`)**:
-  - Clean 134 KB distribution tarball containing single top-level `rfp-studio/` directory, strictly excluding runtime directories (`uploads/`, `saves/`, `exports/`, `screenshots/`), `.venv/`, `.git/`, `.env`, and `__pycache__/`.
+  - `START_HERE.md`: Quickstart guide with verified curl commands.
 
 ---
 
@@ -168,8 +165,8 @@ Unknown fields at any level are strictly rejected with **HTTP 400**.
 1. **Zero LLM Keys in Repositories or Logs**:
    - `GROQ_API_KEY` or other provider tokens must **never** be hardcoded, saved to any file, committed, or printed in logs.
    - `tools/check_llm.py` enforces key absence assertion in test suites.
-2. **Shared Local Development Key**:
-   - The shared local dev key is reserved for local development and appears only in `start.sh`, `start.bat`, and `START_HERE.md` (never in this file).
+2. **Default Local Development Key**:
+   - The default local dev key is reserved for local development and appears only in `start.sh`, `start.bat`, and `START_HERE.md` (never in this file).
 3. **Upload Sanitization**:
    - SVG uploads are inspected for `<script>` tags, javascript URIs, and event handlers; any malicious SVG is rejected with HTTP 400.
 4. **Filesystem Traversal Defense**:
@@ -209,7 +206,5 @@ python3 -m unittest discover tests -v
 
 - **Completed**:
   - Full platform UI, layout engine, save persistence, PPTX/PDF export, selective approvals, and PDF theme extraction are 100% complete and verified with 42 passing automated tests.
-  - Handoff package `rfp-studio-handoff.tar.gz` built, verified, and ready (release archives now live in `../dist/`, outside the project).
-- **Next Steps for Next Agent / Developer**:
-  - Implement Agent 5 (Credibility) inside n8n following [`docs/AGENT5_BRIEF.md`](AGENT5_BRIEF.md).
-  - Implement and integrate remaining agent workflows: Agent 1 (Requirements), Agent 2 & 3 (Diagrams), Agent 4 (Budget), and Agent 6 (Reviewer).
+- **Next Steps (at the time)**:
+  - Implement the agent workflows in n8n: Agent 1 (Requirements), Agent 2 & 3 (Diagrams), Agent 4 (Budget), Agent 5 (Credibility), and Agent 6 (Reviewer).

@@ -67,7 +67,7 @@ test('workflows contain no secrets, only credential names', () => {
   assert.ok(!/sk-[A-Za-z0-9]{20,}/.test(text));
   const startSh = fs.readFileSync(path.join(ROOT, 'start.sh'), 'utf-8');
   const devKey = (/STUDIO_API_KEY=([^\s"]+)/.exec(startSh) || [])[1];
-  if (devKey) assert.ok(!text.includes(devKey), 'shared dev key found in a workflow');
+  if (devKey) assert.ok(!text.includes(devKey), 'local dev key found in a workflow');
   // Credentials are referenced by id and name only; no value is ever stored in a workflow
   ['00_main.json', '60_regenerate.json'].forEach(f => load(f).nodes.filter(n => n.credentials)
     .forEach(n => assert.deepStrictEqual(Object.keys(n.credentials.httpHeaderAuth).sort(), ['id', 'name'])));

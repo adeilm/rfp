@@ -3,14 +3,13 @@
   "note": "Platform files only (excludes agents/, workflows/*.json, docs/agents/)",
   "files": {
     ".env.example": "80673c6c6724b198c418f22bf7e7e0f2698de3ac11c29cf8809532f54ecb0656",
-    "CHANGELOG.md": "49872d53f33a0b220902bff54855e107e8220d41958b8f44fc22c4eaa05b91e8",
-    "README.md": "9e3d1c539704beac081b18e9e92a4774a23d7ae78427e3fc69d698408f5bdc23",
-    "START_HERE.md": "d34e26967f61f15624b47dc9eac88f9ea729e470d1b7afcd412ed2a6a0df4471",
+    "CHANGELOG.md": "1588e351d68d334ac637cd4dd6ca55402d1e2d9a4b8b0d008db437b1b4c4c66e",
+    "README.md": "179386494e38198f6d374a01e7216e14fed76cd7650a50547dc9bed1151fa911",
+    "START_HERE.md": "cf7eaea79c2cc7a1a380052ec83de80c1e2e08111c46ee03d7bc8f9440e21a29",
     "deck.schema.json": "10ad5e1354014ec1ac9a524ad442ede63265f3e80a07e710f1190a6810cfc50e",
-    "docs/AGENT5_BRIEF.md": "c94bd392e2a4ad44a90e8c8a0029c834f84b1c8a2361deeeec9ce76595036f4b",
-    "docs/HANDOVER.md": "74319a9d5e1ebc3f030e9b09bc830f78bbb5d2aedc4209e91c02b8f5d2f88426",
-    "docs/N8N_SETUP.md": "2ed600d3dbefe83684a16bb10dd417f74fdb078c3fbe57e79c4a34871118959f",
-    "docs/README.md": "6035e1245715670fdf863e058ef4375b95934509cb0678c74ecf2d8a6f798934",
+    "docs/DESIGN_LOG.md": "0abee0fff469b1342025f75042b79b8011b497c72f80cf17c4daa550720d4f7d",
+    "docs/N8N_SETUP.md": "eb1b64f4cc0e4ae2ab2e951b44820ba2e92b6041f750c9f0f6ef607655d1a9c8",
+    "docs/README.md": "aca5a6901ec9e134cd180fc3e716b53002eeace56ec6c2c463261b2c4ed982cb",
     "editor.html": "272279f155f1cc3c3c520b6dd13e99a332e43d07e5f1ee064ec0ec7e9fa20433",
     "index.html": "13cfe9cf6973bc8bcaf87b2d6ec29c1486c3d065612fcd9bddf43357f574b079",
     "layout_engine.py": "bd9c173da1ff13a9c00d8ebb30f1d38acfc850990a37b55ef25058f587a6f1e2",
@@ -51,7 +50,7 @@
     "tests/test_api.py": "d111098883370ed7ca8079e1db764e98b614bc568750d469495d331f3b9c6e5f",
     "tests/test_check_llm.py": "6d9d3cc3787feac3b3e7b1d734a20f8ed75b9cace9db4e1a852490043cafc35d",
     "tests/test_decks.py": "5c4a5af10288e2343dcd0d3ee8bc74e7d7fd6b4141f2584298abb7b8e7f32695",
-    "tests/test_docs_paths.py": "e6c9c3e1ea7ba9b4b9fd7acb6897375e1023c9b7c7b96fc9acadff1d14b27626",
+    "tests/test_docs_paths.py": "7d691a84ec7bc9c002012786c7e27a9c891a525d5a470dcaaab7225f9d2913c8",
     "tests/test_elements.py": "ecab4a8f9480381a9b4d7b0a5cce79324baa2e3bc57ebc58d3531c676f638653",
     "tests/test_layout_engine.py": "cfa648c01dfb78824b3e6cdeb232159cff8b5f94c7b6ae237e8102e77dc629e7",
     "tests/test_pdf_theme.py": "7c54ed055eba2523a3c55e7cc64b82a681498e7b6bab913e86f5fabe194ac183",
@@ -63,6 +62,6 @@
     "tests/test_smoke.py": "b5ed332b0bf3105b87931aac7bd4ef53ecb423a137148118dbfc3deff6cc92bd",
     "tools/check_llm.py": "c6e71c1b364cc801c21253a9ad06807d2902b5d408107f98be61aa842279c45d",
     "tools/export_deck.py": "3a81f9007967ae6947b41ff986ff7256a258504d099d005ae81aa8cf62648932",
-    "workflows/README.md": "971ad97263148e4046c64b33b80f480072ecfddbff1a7b6f9d8704b3f8755934"
+    "workflows/README.md": "72aa78002df03bb0e920df18eac480e46229fffe85e9af5815d5df4016908ab6"
   }
 }

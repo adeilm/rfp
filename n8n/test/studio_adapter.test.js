@@ -1,4 +1,4 @@
-// What the proposal studio makes of our proposal inputs, after "Adapt for Studio": node test/studio_adapter.test.js
+// What the proposal studio makes of the pipeline's proposal inputs, after "Adapt for Studio": node test/studio_adapter.test.js
 // Runs the CURRENT Code node "Adapt for Studio" of dist/RFP - Main.json (stubbed $, like test/edge_cases.js), then the studio's OWN
 // normaliser (rfp-studio agents/lib/input.js, loaded read-only: STUDIO_DIR, default ../services/proposal-studio)
 // on the 10 real proposal inputs of run 3 (test/out/execution_ragv2_run3_nodes/Build_Proposal_Input.json) and on

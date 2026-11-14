@@ -1,6 +1,6 @@
 import { ApiError } from './api'
 
-// The proposal studio (rfp-studio, the team's deck platform): its tender inbox (n8n posts the proposal inputs there), the deck
+// The proposal studio (rfp-studio, the deck platform): its tender inbox (n8n posts the proposal inputs there), the deck
 // agents and the slide editor. The browser calls it directly (it answers CORS *): the Vite /api proxy goes to the RAG service,
 // which has its own /api/tenders. No API key here: the calls below need none, and a key in the bundle would be public.
 export const STUDIO = (import.meta.env.VITE_STUDIO_URL || 'http://localhost:8091').replace(/\/+$/, '')

@@ -1,59 +1,23 @@
 # Start Here
 
-**You received `rfp-studio.zip`?** Follow [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md) from step 1:
-it installs the platform, the AI agents (n8n in Docker, your own free Groq key) and the
-OliveSoft templates, in about 30 minutes. Only the platform, without AI: step 2, then
-`./start.sh` (or `start.bat` on Windows) and open <http://localhost:8091>.
+**Full install** (the platform, the AI agents in n8n with your own free Groq key, and the
+OliveSoft templates, about 30 minutes): follow [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md)
+from step 1.
 
-The rest of this file is the older quickstart for agent developers.
-
----
-
-# n8n Agent Developer Quickstart
-
-## You just received this archive? Read this first (5 minutes)
-
-**What it is.** `rfp-studio-handoff.tar.gz` contains the finished slide editor (the
-"platform") plus everything you need to build an n8n agent that sends slides to it. You do
-**not** change the platform code: your agent produces JSON, the editor turns it into slides.
-
-**What to do, in order:**
-
-1. Unpack it and install (section 1 below). Use a virtual environment.
-2. Start the editor with `./start.sh` (or `start.bat` on Windows) and open
-   <http://localhost:8091> (section 2).
-3. Send a sample deck with the curl command in section 3 and open the link it returns.
-   If you see slides, your setup works.
-4. Run `python3 tests/check_inputs.py`: the last line must say `ALL INPUT CHECKS PASSED`.
-5. **Agent 5 (Credibility):** now read [`docs/AGENT5_BRIEF.md`](docs/AGENT5_BRIEF.md).
-   It is your task, step by step. Then set up n8n with [`docs/N8N_SETUP.md`](docs/N8N_SETUP.md).
-
-**What you need besides this archive:** a Groq API key (create your own free key at
-<https://console.groq.com>, or receive one privately; never in a group chat) and the Groq
-model name to use. Check both with `python3 tools/check_llm.py` (section 6).
-
-**Rules that save time:** report after each step of your brief and wait for the "next";
-if you are stuck for one hour, send the exact error message; never put a key in a file,
-a workflow export or a chat.
+**Only the platform, without AI:** the steps below. They install the editor, start it, send
+a sample deck with curl and list the slide rules the agents must follow.
 
 **Where things are:** this file (quick start and slide rules), [`README.md`](README.md)
 (full reference: API, deck spec, troubleshooting), [`docs/README.md`](docs/README.md)
-(index of all documents and who should read them).
+(index of all documents).
 
 ---
 
-Welcome to RFP Slide Deck Studio! This platform receives slide deck specifications (JSON) from external systems (such as n8n agents), automatically generates pixel-perfect 1920×1080 layouts, provides an interactive web review editor, and exports to native editable PowerPoint (`.pptx`) and PDF.
+RFP Slide Deck Studio receives slide deck specifications (JSON) from external systems (such as n8n agents), automatically generates pixel-perfect 1920×1080 layouts, provides an interactive web review editor, and exports to native editable PowerPoint (`.pptx`) and PDF.
 
 ---
 
-## 1. Unpack & Installation
-
-### Unpack the Archive
-If you received the tarball distribution, extract it:
-```bash
-tar -xzvf rfp-studio-handoff.tar.gz
-cd rfp-studio
-```
+## 1. Installation
 
 ### Prerequisites
 - Python 3.10+ (tested on Python 3.12)
@@ -76,7 +40,7 @@ playwright install chromium
 
 ## 2. Start the Server
 
-We provide quickstart launcher scripts for macOS/Linux and Windows that automatically export the shared development key (`WIN2WIN_FSS_CSTAM_3`) if `STUDIO_API_KEY` is not already configured:
+The launcher scripts for macOS/Linux and Windows automatically export the default local development key (`WIN2WIN_FSS_CSTAM_3`) if `STUDIO_API_KEY` is not already configured:
 
 ### macOS / Linux
 ```bash
@@ -133,8 +97,8 @@ All contracts and test inputs are located in:
 - **`deck.schema.json`**: The strict JSON schema for deck payloads.
 - **`samples/`**: Working sample deck specifications (`software.json`, `non_software.json`, `thin.json`).
 - **`tests/inputs/`**: The canonical test inputs representing RFP tenders and matching data.
-- **`tests/credibility/`**: Dedicated identical copy for Agent 5 (Credibility).
-- **`tests/diagram/`**: Dedicated identical copy for Architecture and Planning diagram agents.
+- **`tests/credibility/`**: Identical copy used by the Credibility agent (Agent 5) tests.
+- **`tests/diagram/`**: Identical copy used by the Architecture and Planning diagram agent tests.
 
 ---
 
@@ -190,12 +154,11 @@ python3 -m unittest discover tests -v
 
 ---
 
-## 8. Team Folders & Documentation
+## 8. Documentation
 
 - **`docs/N8N_SETUP.md`**: Complete beginner setup guide for n8n (npm/Docker, network setup, Groq configuration, test workflow).
-- **`docs/AGENT5_BRIEF.md`**: Specification brief for Agent 5 (Credibility).
-- **`workflows/`**: Export your n8n workflow JSON files here (`credibility.json` and `diagrams.json`). Never commit credentials inside these files.
-- **`tests/credibility/`**: Working test inputs for Agent 5 (Credibility).
+- **`docs/agents/`**: The deck agents: contracts, runbook, evaluation report, n8n workflows.
+- **`workflows/`**: The nine generated n8n workflow exports (see `workflows/README.md`). Never commit credentials inside these files.
 
 ---
 
@@ -222,10 +185,3 @@ python3 -m unittest discover tests -v
   - If n8n runs inside Docker, use `http://host.docker.internal:8091/api/decks` (and on Linux ensure `--add-host=host.docker.internal:host-gateway` is passed to `docker run`).
 - **Groq Rate Limit (HTTP 429)**:
   - The free Groq tier reached rate limits. In n8n, enable "Retry On Fail" on the HTTP Request node with a 15-second delay.
-
-
-
-
-
- 
-

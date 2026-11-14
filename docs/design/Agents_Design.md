@@ -1,6 +1,6 @@
 # The Agents: how to build the AI team (n8n + LLM + MCP)
 
-This README covers **only the agent side** of RFP Deck Studio. The editor/platform side is in `master_prompt.md`. The big picture is in `README.md`.
+This note covers **only the agent side** of RFP Deck Studio: the design the deck agents were built from. The editor/platform side is in [services/proposal-studio/README.md](../../services/proposal-studio/README.md). The big picture is in the [root README](../../README.md).
 
 **What the agents do:** they receive a tender that matches OliveSoft at more than 85%, and they produce a **deck spec** (JSON made of blocks) that the platform turns into slides.
 
@@ -129,7 +129,7 @@ Every agent returns the same envelope. This is what makes merging easy.
 - `warnings`: anything uncertain, shown to the human later.
 
 ### 4.3 Final deck spec
-The Merge step collects all `slides`, puts them in the standard order, adds the fixed title and thank-you slides, and posts the result to the platform. Format: see `master_prompt.md`, Phase 3.
+The Merge step collects all `slides`, puts them in the standard order, adds the fixed title and thank-you slides, and posts the result to the platform. Format: see the [deck spec](../../services/proposal-studio/README.md#deck-spec-post-apidecks) of the studio.
 
 ---
 

@@ -50,7 +50,6 @@ Start with the [repository README](../README.md) (what TendOlive does, screensho
 
 | Folder | Content |
 |---|---|
-| [design/](design/) | Design notes ([Real_Data_Integration.md](design/Real_Data_Integration.md)) |
+| [design/](design/) | Design notes ([Real_Data_Integration.md](design/Real_Data_Integration.md), [Agents_Design.md](design/Agents_Design.md), [Tender_Pipeline_Summary.md](design/Tender_Pipeline_Summary.md)) |
 | [presentation/](presentation/) | Presentation notes ([Knowledge_Base_Guide.md](presentation/Knowledge_Base_Guide.md), [RAG_progress_notes.md](presentation/RAG_progress_notes.md)) |
-| [team/](team/) | Team notes ([README_agents.md](team/README_agents.md), [tender_pipeline_summary.md](team/tender_pipeline_summary.md)) |
 | [brand/](brand/) | TendOlive logos and icons |

@@ -1,6 +1,6 @@
 // Join Buyers & Build RAG. Back to one item per tender: survivors get their buyer profile, and a RAG request when they have
 // verified requirements (title-only tenders have none: nothing to match). The request follows the RAG service's contract
-// (docs/integration/N8N_RAG_HANDOFF.md of the team repo, checked 2026-10-20): {tender_id, client, sector, requirements:
+// (docs/integration-and-api.md, checked 2026-10-20): {tender_id, client, sector, requirements:
 // {technical: [], team: [], experience: [], timeline}} plus the tender's metadata (title, source, dates, budget...), which the
 // service stores and shows in its tender inbox without using it for matching. Each requirement is sent as its short skill line
 // (rag_text, checked in Verify Analysis): the RAG's rules understand those, long sentences go to its strict reranker.

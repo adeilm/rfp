@@ -1,7 +1,7 @@
 # OliveSoft RFP Intelligence
 
 Finds public tenders, checks each requirement against OliveSoft's CVs and past projects, and drafts the proposal deck
-for the ones worth bidding on. Built for the CSTAM 3.0 challenge.
+for the ones worth bidding on. Built by Mohamed Ali Abid ([adeilm](https://github.com/adeilm)) for the CSTAM 3.0 challenge.
 
 [Workflow](#workflow) · [Screenshots](#what-it-looks-like) · [Architecture](#architecture) · [Results](#results) ·
 [Quick start](#quick-start) · [Tests](#tests)

@@ -35,7 +35,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{\footnotesize\color{muted}TendOlive \textperiodcentered\ Team preparation}
+\fancyfoot[L]{\footnotesize\color{muted}TendOlive \textperiodcentered\ Jury preparation}
 \fancyfoot[R]{\footnotesize\color{muted}\thepage}
 \newtcolorbox{say}[1]{enhanced,colback=mint,colframe=teal,boxrule=0pt,leftrule=3pt,
   sharp corners,left=9pt,right=9pt,top=7pt,bottom=7pt,
@@ -61,14 +61,14 @@
 \section{What the RAG contributes}
 \begin{say}{The 30-second version}
 A consulting firm must prove every claim in a bid: ``3 data engineers'', ``a PMP-certified project manager'', ``a health-sector reference''.
-The proof is scattered across CVs and project records. Our RAG service reads each tender requirement, finds the
+The proof is scattered across CVs and project records. The RAG service reads each tender requirement, finds the
 OliveSoft documents that could prove it, and decides: \textbf{covered, partial or missing}, with the \textbf{exact
 line} that proves it. It never invents proof: when nothing proves a requirement, it says so and lists what to add.
 \end{say}
 \smallref{The quotes are copied from documents. The system can still select an unsuitable quote or make a wrong matching decision, so a person reviews the result.}
 
 \subsection{Its place in the project}
-RAG means \textbf{Retrieval-Augmented Generation}: retrieve useful information, then give it to a large language model (LLM) to help it write. In TendOlive, our service retrieves and checks the evidence; the proposal agents do the writing.
+RAG means \textbf{Retrieval-Augmented Generation}: retrieve useful information, then give it to a large language model (LLM) to help it write. In TendOlive, the RAG service retrieves and checks the evidence; the proposal agents do the writing.
 
 \begin{center}
 \begin{tikzpicture}[node distance=4mm,
@@ -140,7 +140,7 @@ The service returns Covered. Here, search finds candidates and the reranker asse
 \textbf{What the rules protect against:} mentioning project management does not establish PMP certification. The CV must list the requested certificate. A recognised alternative can be marked Partial for a person to check.
 
 \newpage
-\section{Why these choices, and what we tested}
+\section{Why these choices, and what I tested}
 
 \subsection{The choices to be able to explain}
 \begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{4.0cm}Y@{}}
@@ -155,8 +155,8 @@ Local retrieval and checking & The RAG service runs on CPU without a paid AI API
 \bottomrule
 \end{tabularx}
 
-\subsection{How we evaluated it}
-Expected answers were prepared from the documents and compared with the service's outputs. We compared search methods and decision methods on shared test cases, using separate benchmark indexes. We checked both \textbf{which documents were retrieved} and \textbf{whether the resulting assessments were correct}.
+\subsection{How I evaluated it}
+Expected answers were prepared from the documents and compared with the service's outputs. I compared search methods and decision methods on shared test cases, using separate benchmark indexes. I checked both \textbf{which documents were retrieved} and \textbf{whether the resulting assessments were correct}.
 
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.5cm}>{\bfseries\raggedright\arraybackslash}p{2.7cm}Y@{}}
 \toprule
@@ -184,23 +184,23 @@ Test & Result & What this tells us\\
 \smallref{Start with the short answer. Add an example or a result if the jury asks for more.}
 \vspace{7pt}
 
-\qa{What did you build in the RAG part?}{A service that takes tender requirements, searches the company's documents, checks what those documents support, and returns statuses, evidence, a proposed team and missing information. Its results feed the web app and the proposal workflow.}
+\qa{What does the RAG part do?}{A service that takes tender requirements, searches the company's documents, checks what those documents support, and returns statuses, evidence, a proposed team and missing information. Its results feed the web app and the proposal workflow.}
 
-\qa{Where is the generation in your RAG?}{The proposal agents use an LLM to write from the retrieved results. Our RAG service handles retrieval and assessment. It uses embedding and reranking models, but no generative LLM to make the coverage decisions.}
+\qa{Where is the generation in your RAG?}{The proposal agents use an LLM to write from the retrieved results. The RAG service handles retrieval and assessment. It uses embedding and reranking models, but no generative LLM to make the coverage decisions.}
 
-\qa{Why not put all the CVs into an LLM prompt?}{We wanted explicit checks for counts and certifications, traceable quotes and results we can test consistently. We did not benchmark this system against a full LLM-prompting approach, so we cannot claim it outperforms that alternative.}
+\qa{Why not put all the CVs into an LLM prompt?}{I wanted explicit checks for counts and certifications, traceable quotes and results I can test consistently. I did not benchmark this system against a full LLM-prompting approach, so I cannot claim it outperforms that alternative.}
 
 \qa{Why do you need both rules and AI?}{The rules check known constraints, such as ``two people'' or ``PMP certified''. The AI search and reranker help with varied wording. The vocabulary needs maintenance, and the AI fallback can still make mistakes.}
 
-\qa{Can it invent or misrepresent evidence?}{It copies quotations from the documents rather than generating them. However, it can select an irrelevant document or interpret a match incorrectly. We check quote relevance, flag gaps and keep human review in the process.}
+\qa{Can it invent or misrepresent evidence?}{It copies quotations from the documents rather than generating them. However, it can select an irrelevant document or interpret a match incorrectly. The service checks quote relevance and flags gaps, and human review stays in the process.}
 
 \qa{Does a high fit score mean we will win the tender?}{No. It measures documented coverage of the requirements. Code uses the matrix to suggest a bid action, but pricing, availability and the final decision still need human judgment.}
 
-\qa{How did you test it, and how strong are the results?}{We compared outputs with expected answers from the documents. The final system passed 40 of 42 internal CV checks and got 16 of 20 statuses right on additional BOAMP requirements. Both are small, development-influenced sets; they are not a guarantee of performance on new tenders.}
+\qa{How did you test it, and how strong are the results?}{I compared outputs with expected answers from the documents. The final system passed 40 of 42 internal CV checks and got 16 of 20 statuses right on additional BOAMP requirements. Both are small, development-influenced sets; they are not a guarantee of performance on new tenders.}
 
 \qa{Do CVs leave the machine?}{Retrieval and matching run locally. The proposal-writing model can receive selected evidence; the documented default uses Groq. Privacy therefore depends on the full pipeline configuration, not only the RAG service.}
 
-\qa{What would you improve next?}{Evidence selection on new tenders, ambiguous wording and independent evaluation. We would have a person check the labels, then test on fresh requirements that were not used to adjust the rules.}
+\qa{What would you improve next?}{Evidence selection on new tenders, ambiguous wording and independent evaluation. I would have a person check the labels, then test on fresh requirements that were not used to adjust the rules.}
 
 \newpage
 \section*{Technical reference \textnormal{\large(optional)}}
@@ -217,7 +217,7 @@ Test & Result & What this tells us\\
 
 \qa{How is the team selected?}{The service searches for a small set of qualifying CVs covering the requested headcounts. One person can satisfy several requirement lines. It uses exhaustive search up to a limit, then a greedy fallback; near matches are not staffed. This is a document-based proposal, not an availability check.}
 
-\qa{Why did you use direct benchmarks rather than RAGAS?}{Our main outputs are statuses, counts and selected documents, so we compared them directly with expected answers and used retrieval metrics. Assessing whether the generated proposal stays faithful to the evidence would be a separate evaluation.}
+\qa{Why did you use direct benchmarks rather than RAGAS?}{Its main outputs are statuses, counts and selected documents, so I compared them directly with expected answers and used retrieval metrics. Assessing whether the generated proposal stays faithful to the evidence would be a separate evaluation.}
 
 \subsection{Useful implementation details}
 {\small

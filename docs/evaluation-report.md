@@ -17,7 +17,7 @@ Contents: [1. Scope and setup](#1-scope-and-setup) · [2. RAG benchmark](#2-rag-
 |---|---|
 | Date | 2026-10-20 |
 | Platform | Docker Compose on Windows 11 (Docker Desktop), the five containers of `docker-compose.yml` |
-| Orchestration | n8n 2.41.3: our 4 workflows (RFP - Main, Scout Tools, Research Tools, Refine Slide) and the 9 deck-agent workflows |
+| Orchestration | n8n 2.41.3: the pipeline's 4 workflows (RFP - Main, Scout Tools, Research Tools, Refine Slide) and the 9 deck-agent workflows |
 | RAG models | `intfloat/multilingual-e5-small` embeddings, BM25, cross-encoder `mmarco-mMiniLMv2-L12-H384-v1`, rules (CPU) |
 | LLM, main configuration | Main on a local Ollama `qwen3:4b-instruct` (`LLM_PROVIDER=ollama`); deck agents and refine on Groq `openai/gpt-oss-120b` (`DECK_LLM_PROVIDER=groq`) |
 | LLM, second configuration | Groq `openai/gpt-oss-120b` for everything (`LLM_PROVIDER=groq`), run once |
@@ -163,7 +163,7 @@ What a reviewer still had to fix in the earlier sample (deck `d1733e9d`, 2026-10
 - Still to fix by a reviewer: project results copied from the knowledge base are in English when the agent writes no
   French description; the "Preuve" column remark above.
 - On the financial offer slide, the one-time total in the note (28 420 EUR) is not the sum of the one-time lines shown
-  (20 300 EUR plus 15 % support, 23 345 EUR). This slide was also the one used in the refine test (section 5); we did not
+  (20 300 EUR plus 15 % support, 23 345 EUR). This slide was also the one used in the refine test (section 5); I did not
   establish whether the difference comes from the refine or from Agent 4. Prices need OliveSoft's approval before export
   in any case.
 

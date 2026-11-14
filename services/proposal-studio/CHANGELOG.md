@@ -32,9 +32,7 @@ All notable changes to the RFP Slide Deck Studio project.
 - README rewritten: project layout, install with a virtual environment, run, all
   environment variables (no `.env` file is read), full API with curl examples, deck spec,
   element fields, troubleshooting, architecture, known limitations.
-- `START_HERE.md`: new "You just received this archive?" section, virtual environment
-  setup, fixed link to `docs/AGENT5_BRIEF.md`, corrected overflow rule and test count.
-- `docs/AGENT5_BRIEF.md`: one sentence corrected (no font shrinking).
+- `START_HERE.md`: virtual environment setup, corrected overflow rule and test count.
 - `start.sh` / `start.bat`: change to their own folder first, so they work from anywhere.
 - `pptx_exporter.py`: also looks for `/uploads/...` images next to the module, so PPTX
   images work when the server is started from another folder.
@@ -43,9 +41,9 @@ All notable changes to the RFP Slide Deck Studio project.
   removes its temporary folder.
 
 ### Moved and removed
-- `HANDOVER_README.md` moved to `docs/HANDOVER.md` (shared dev key removed from it, outdated
+- The design log moved to `docs/DESIGN_LOG.md` (local dev key removed from it, outdated
   file tree replaced by a link to the README).
-- `rfp-studio-handoff.tar.gz` moved out of the project to `../dist/`; all release archives
+- The release archive moved out of the project to `../dist/`; all release archives
   are built there.
 - Deleted generated files: `__pycache__/`, `screenshots/`, everything in `exports/`, and 22
   uploaded files not referenced by any saved project (backup in `../rfp-studio-backup-2026-10-18/`).
@@ -53,7 +51,7 @@ All notable changes to the RFP Slide Deck Studio project.
   modules), `_toEmbedUrl` in `canvas.js` (duplicate of `render.js`), `HistoryManager.clear()`.
 - `.gitignore` completed (`screenshots/`, `dist/`, `*.log`, `.DS_Store`).
 
-## [Handoff final] - 2026-10-17
+## [LLM check tests and documentation] - 2026-10-17
 
 ### Added & Improved
 - **LLM Verification Script (`tools/check_llm.py`, `tests/test_check_llm.py`)**:
@@ -61,18 +59,16 @@ All notable changes to the RFP Slide Deck Studio project.
   - Updated missing variable diagnostics to provide terminal export commands (`export` on macOS/Linux and `set` on Windows) instead of referencing non-parsed `.env` files.
   - Implemented clean one-line error messages for all failure modes (401, 400/404, 429 with `Retry-After`, timeout, network error, and invalid JSON) with zero key leakage.
   - Added full test suite `tests/test_check_llm.py` with mock HTTP server covering all statuses and key absence assertion.
-- **Documentation & Onboarding (`docs/AGENT5_BRIEF.md`, `START_HERE.md`, `docs/N8N_SETUP.md`)**:
-  - Authored full Agent 5 (Credibility) brief in `docs/AGENT5_BRIEF.md` with schema-verified block specifications and layout limits.
-  - Added a dedicated Agent 5 orientation callout at the top of `START_HERE.md`.
+- **Documentation (`START_HERE.md`, `docs/N8N_SETUP.md`)**:
   - Clarified terminal variable export instructions across documentation.
 - **Clean Distribution Archive**:
-  - Rebuilt `rfp-studio-handoff.tar.gz` strictly excluding runtime directories (`uploads/`, `saves/`, `exports/`, `screenshots/`), virtualenvs, git files, and bytecode.
+  - Rebuilt the release archive strictly excluding runtime directories (`uploads/`, `saves/`, `exports/`, `screenshots/`), virtualenvs, git files, and bytecode.
 
-## [Handoff package] - 2026-10-17
+## [Launchers and LLM check] - 2026-10-17
 
 ### Added
 - **Quickstart Launcher Scripts (`start.sh`, `start.bat`)**:
-  - One-click launcher scripts for Linux/macOS and Windows setting `STUDIO_API_KEY` to the shared dev key if unset.
+  - One-click launcher scripts for Linux/macOS and Windows setting `STUDIO_API_KEY` to the default local dev key if unset.
   - Supports configurable port (default 8091).
   - Securely prints connection URL and header name `X-API-Key` without revealing secret tokens.
 - **Environment Configuration (`.env.example`)**:
@@ -80,12 +76,12 @@ All notable changes to the RFP Slide Deck Studio project.
 - **LLM Verification Utility (`tools/check_llm.py`)**:
   - Standard-library tool testing Groq API connectivity and models using strict `response_format: {"type": "json_object"}`.
   - Implements clean bilingual error diagnostics for missing variables, bad API key (401), missing/invalid model name (400/404), rate limit backoff (429 with retry-after header), and network timeouts without exposing credentials.
-- **n8n Agent Developer Setup Guide (`docs/N8N_SETUP.md`)**:
+- **n8n Setup Guide (`docs/N8N_SETUP.md`)**:
   - Comprehensive guide for running n8n via npm or Docker, configuring network endpoints (including Linux Docker host gateway), managing Header Auth credentials, and implementing retry strategies on 429 rate limits.
-- **Agent 5 Documentation & Onboarding (`docs/AGENT5_BRIEF.md`, `START_HERE.md`)**:
-  - Added Agent 5 specification placeholder and updated developer quickstart guide with startup scripts, curl instructions, contract rules, and verification tooling.
+- **Quickstart (`START_HERE.md`)**:
+  - Updated with startup scripts, curl instructions, contract rules, and verification tooling.
 - **Distribution Archive**:
-  - Packaged clean, production-ready handoff archive `rfp-studio-handoff.tar.gz`.
+  - Packaged a clean release archive.
 
 ## [Phase 6 — PDF Template Theme Extraction] - 2026-10-17
 
@@ -106,13 +102,13 @@ All notable changes to the RFP Slide Deck Studio project.
 - **Automated Tests (`tests/test_pdf_theme.py`)**:
   - 8 unit and integration tests covering dark background PDFs, white pages with colored headers, font subset name cleaning, image-only scanned PDFs, corrupt/encrypted payloads, extraction determinism, 25 MB size limits, and Playwright end-to-end theme upload & color picker overrides.
 
-## [Handoff pack] - 2026-10-17
+## [Test inputs and quickstart] - 2026-10-17
 
 ### Added
-- **Onboarding & Documentation (`START_HERE.md`, `.env.example`)**: Quickstart documentation for n8n agent developers with setup instructions, verified curl examples, schema rules, and environment variable templates.
+- **Quickstart & Configuration (`START_HERE.md`, `.env.example`)**: Quickstart documentation with setup instructions, verified curl examples, schema rules, and environment variable templates.
 - **Agent Test Inputs (`tests/inputs/`, `tests/diagram/`, `tests/credibility/`, `tests/inputs/README.md`)**: Canonical tender and match inputs (`software.json`, `non_software.json`, `thin.json`, `injection.json`, `many_projects.json`) with cross-folder parity.
 - **Contract & Parity Validator (`tests/check_inputs.py`)**: Automated verification script validating input structure, number consistency, engineer roles, and byte-level parity across folders.
-- **Workflow Storage (`workflows/`, `workflows/README.md`)**: Designated workspace folder for exporting n8n workflow JSON (`diagrams.json`, `credibility.json`).
+- **Workflow Storage (`workflows/`, `workflows/README.md`)**: Folder for the exported n8n workflow JSON.
 
 ## [Phase 4 — Native PowerPoint (.pptx) Object Generation] - 2026-10-17
 

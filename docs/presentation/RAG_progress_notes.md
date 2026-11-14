@@ -25,7 +25,7 @@ n8n trigger -> Tender extraction -> RAG retrieval -> Proposal
 
 - **Input:** the requirements extracted from the tender (technical, team, experience), plus client and sector.
 - **Output:** the best matching CVs, projects and technology stacks for the proposal stage, with evidence and a score.
-- **Connection:** n8n calls my service with `POST /retrieve/tender` on port 8001.
+- **Connection:** n8n calls the RAG service with `POST /retrieve/tender` on port 8001.
 
 ---
 

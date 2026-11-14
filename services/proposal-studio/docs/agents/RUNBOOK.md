@@ -38,7 +38,7 @@ If running n8n in Docker:
 
 ### 1. Platform API Key
 
-**Shared dev key** (from `START_HERE.md`):
+**Default local dev key** (from `START_HERE.md`):
 ```bash
 export STUDIO_API_KEY="your-key-here"
 ```

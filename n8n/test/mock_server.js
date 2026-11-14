@@ -42,7 +42,7 @@ const rag = body => {
   return { requirement_matches: details, requirements_matrix: matrix,
     fit_score: { technical_fit: share('technical'), experience_fit: share('experience'), team_fit: share('team'), domain_fit: body.sector ? 100 : null, certification_fit: null, overall: share('technical') },
     warnings: blocking.length ? [`BLOCKING - no internal evidence for mandatory requirement(s): ${blocking.join('; ')}`] : [], tender_id: body.tender_id,
-    // fields of the team's RAG v2 (2026-10-20): data mode, team builder, knowledge gaps
+    // fields of the RAG v2 (2026-10-20): data mode, team builder, knowledge gaps
     data_mode: body.data_mode || 'company', coverage_basis: 'Recorded capabilities; declarations are not verified document evidence.', team_proposal: null,
     knowledge_gaps: matrix.filter(m => m.status === 'missing').map(m => ({ requirement: m.requirement, category: m.category, status: 'missing', mandatory: m.mandatory,
       kind: 'technology', gap: 'No record lists it.', suggestion: 'Add a record that lists it.' })), knowledge_counts: { cv: 0, past_project: KB.length } };

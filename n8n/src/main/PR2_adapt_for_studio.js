@@ -1,4 +1,4 @@
-// Adapt for Studio. The team's proposal studio (rfp-studio) reads our olivesoft.proposal-input.v2 as it is, but none of its
+// Adapt for Studio. The proposal studio (rfp-studio) reads the pipeline's olivesoft.proposal-input.v2 as it is, but none of its
 // honesty flags: every asset becomes a reference or an engineer, every covered justification a "why us" bullet, and its
 // fallback budget path (pricing_catalog.json, used only when pricing.json is missing) turns any budget estimate into three
 // budget scenarios. So the copy it receives (a deep copy: Build Proposal Input's output and its file stay the

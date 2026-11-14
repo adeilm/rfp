@@ -1,5 +1,5 @@
-// Build Proposal Input. Hand-off to the team's proposal / deck service: ONE JSON per fit tender still open for bidding,
-// best-ranked first (Config proposal.maxTenders), contract "olivesoft.proposal-input.v2" (INTEGRATION.md): the structure
+// Build Proposal Input. Hand-off to the proposal / deck service: ONE JSON per fit tender still open for bidding,
+// best-ranked first (Config proposal.maxTenders), contract "olivesoft.proposal-input.v2" (docs/integration-and-api.md): the structure
 // the deck service asked for (tender / analysis / buyer_profile / rag / matrix / competition / options) plus the verified
 // extras a proposal needs (the tender's own quote for each requirement, mandatory flags, award criteria, buyer contacts,
 // the awarded contracts behind the budget, the buyer's suppliers with the awards that name them). Every number and

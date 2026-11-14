@@ -6,7 +6,7 @@ and edits the deck in the browser, then exports it to PDF and native, editable P
 
 **Agents write. Code checks. Human approves.**
 
-- New to the project or building an n8n agent? Start with [START_HERE.md](START_HERE.md).
+- Quick start (install, run, send a deck with curl, slide rules): [START_HERE.md](START_HERE.md).
 - **Agent system complete:** All 6 agents operational with budget scenarios, competitive analysis, and regeneration.
 - All documents and who should read them: [docs/README.md](docs/README.md).
 - History of every phase: [CHANGELOG.md](CHANGELOG.md).
@@ -40,19 +40,18 @@ rfp-studio/
 | `static/` | Editor code: `app.js` (app logic), `canvas.js` (selection, drag, resize), `render.js` (one renderer for editor and export), `history.js` (undo/redo), `app.css` |
 | `deck.schema.json` | JSON Schema of the deck spec accepted by `POST /api/decks` |
 | `requirements.txt` | Pinned Python dependencies |
-| `start.sh`, `start.bat` | Start the server with the shared local dev key (see [START_HERE.md](START_HERE.md)) |
+| `start.sh`, `start.bat` | Start the server with the default local dev key (see [START_HERE.md](START_HERE.md)) |
 | `exports/`, `uploads/`, `saves/` | Runtime folders created by the server: export files, uploaded media, saved projects |
 
 **Agent integration kit (used by the n8n agent workflows)**
 
 | Path | What it is |
 |---|---|
-| `START_HERE.md` | Quick start for agent builders: run the editor, send a deck with curl, slide rules |
-| `docs/AGENT5_BRIEF.md` | The full task brief for Agent 5 (Credibility) |
+| `START_HERE.md` | Quick start: run the editor, send a deck with curl, slide rules |
 | `docs/N8N_SETUP.md` | Install n8n, reach the editor from Docker, store credentials, Groq setup |
 | `samples/` | Working deck specs: `software.json`, `non_software.json`, `thin.json` |
 | `tests/inputs/` | Fake tender inputs for the agents (source of truth), described in `tests/inputs/README.md` |
-| `tests/diagram/`, `tests/credibility/` | Identical copies of `tests/inputs/` for each agent team |
+| `tests/diagram/`, `tests/credibility/` | Identical copies of `tests/inputs/` for the diagram and credibility agent tests |
 | `tests/check_inputs.py` | Checks the inputs and that the three folders are identical |
 | `tools/check_llm.py` | Checks a Groq key and model name |
 | `tools/export_deck.py` | Exports a saved deck to PDF or PPTX from the command line |
@@ -116,7 +115,7 @@ start.bat             REM Windows, port 8091
 start.bat 8099
 ```
 
-The start scripts set `STUDIO_API_KEY` to the shared local dev key **only if it is not
+The start scripts set `STUDIO_API_KEY` to the default local dev key **only if it is not
 already set**, and never print it. Manual start, with your own key:
 
 ```bash
@@ -366,7 +365,7 @@ PowerPoint object with python-pptx. Templates are read by `pptx_extractor.py` an
   editor (and in `tools/export_deck.py`); `POST /api/export` itself does not enforce it.
 - **Regenerate is not protected by the key:** anyone who can reach the editor can trigger
   the n8n webhook (and its LLM cost).
-- **Shared dev key for local use only:** use your own long `STUDIO_API_KEY` on any shared
+- **Default dev key for local use only:** use your own long `STUDIO_API_KEY` on any shared
   or public server.
 
 **Agent System (n8n integration)**

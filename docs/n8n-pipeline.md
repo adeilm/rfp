@@ -1,6 +1,6 @@
 # n8n pipeline
 
-Our n8n part of OliveSoft RFP Intelligence (folder `n8n/`). `build.js` generates 4 workflows in `dist/`:
+The n8n part of OliveSoft RFP Intelligence (folder `n8n/`). `build.js` generates 4 workflows in `dist/`:
 
 | workflow | what it is |
 |---|---|
@@ -99,7 +99,7 @@ corrected from the offer.
 
 - **RAG** (`Call RAG`): one request per fit tender with verified requirements. Requirements are now **short single
   statements in English** (Config `rag.language`, the language of the RAG documents) and the analysis also asks for **team**
-  and **experience** requirements; the French quote stays on our side as proof. `Join RAG` reads the matrix and the scores,
+  and **experience** requirements; the French quote stays on the pipeline side as proof. `Join RAG` reads the matrix and the scores,
   keeps every proof document and tells a real proof (CV, company record) from a fictional demo record or a weak neighbour.
 - **Proposal / deck** (`Build Proposal Input` → `Send to Proposal Service`): one JSON per fit tender (tender, verified
   requirements + RAG status + proof documents, matched CVs / projects / tech stack, buyer profile, market study, company
@@ -108,11 +108,11 @@ corrected from the offer.
   relevance score, recommendation (bid / bid_with_partner / no_bid / review) and risks come from rules in code (`bid` only
   when every requirement is covered and no obligation sentence of the notice is left out of the matrix). The first item also carries all of them as `proposal_inputs_<date>.json`,
   the full v2.
-- **Proposal studio** (`Adapt for Studio` → `Send to Proposal Service` → `Start Deck`): the team's studio (rfp-studio,
+- **Proposal studio** (`Adapt for Studio` → `Send to Proposal Service` → `Start Deck`): the proposal studio (rfp-studio,
   port 8091) stores every proposal input in its tender inbox (`proposal.url`, header `X-API-Key` from the n8n credential
   **Proposal Studio key**) and makes the decks with its agents, which run in this n8n as 9 deck-agent workflows
   (`GENERATE_MODE=webhook`; `RFP - Refine Slide` then lets a sales person rewrite one slide with an instruction). The
-  studio does not read our honesty flags, so `Adapt for Studio` sends
+  studio does not read the pipeline's honesty flags, so `Adapt for Studio` sends
   it a copy without what a deck would show as proof without being one: fictional demo records, weak neighbours, header
   and CV skills lines as "why us", CVs outside the proposed team (whose certifications it adds), a budget the market
   study does not support, an unknown template id (OliveSoft's own declarations stay). `Start Deck` then starts the deck
@@ -132,7 +132,7 @@ a kind of system or a sector only when the quote or the title names it, at least
 a technology are dropped ("Angular interface" becomes "Angular", never "SQL Server"). A line listing several skills
 becomes one requirement each. `sector` is one of the RAG's words (public sector, health, education, telecom, finance,
 retail, tourism) and must be written in the tender, else `public sector`. A tender with no verified requirement is not
-sent (`rag.status = skipped_no_requirements`). Rows are matched back to our requirements by text, then by order; a row the
+sent (`rag.status = skipped_no_requirements`). Rows are matched back to the pipeline's requirements by text, then by order; a row the
 RAG does not return counts as missing.
 
 **Rules in the proposal input.**
@@ -179,7 +179,7 @@ inputs.
 | Separate triage and requirements LLM steps (2 calls per tender, 10 nodes) | one analysis call: type + fit + quote, requirements only when fit is high/medium |
 | `aiMaxTenders` cap | every kept tender is analysed (limit at the source with `maxRecordsPerApi` for tests) |
 | `LLM - Buyer Profile` step | the agent's final answer is the short profile; code verifies it |
-| Proposal / deck renderer nodes inside the workflow | the deck is the team's service: the workflow prepares its input and calls it |
+| Proposal / deck renderer nodes inside the workflow | the deck is the studio's service: the workflow prepares its input and calls it |
 | `retryOnFail` on LLM, Firecrawl and API nodes | with "On Error: continue", n8n only retries when the FIRST item fails, and then re-runs every item; failures are counted in Run Summary instead |
 | Hardcoded portal list (`PORTAL_RE`), `{FR:'France', TN:'Tunisia'}` maps, "OliveSoft" in prompts | portals = hosts of your own sources; country names from the ISO code; company name from Config |
 | Heuristic `priority_score` / `heuristic_score` | ranking = fit level, then RAG coverage, then deadline |
@@ -315,7 +315,7 @@ How to run every suite: [tests/README.md](../tests/README.md). In short:
   market edge cases, run report and incremental runs, the hand-off to the proposal studio): `node test/edge_cases.js`
   runs 223 cases on the built Code nodes (and the wiring) of `dist/` in under a second. Results, the known gaps (with
   their code location) and the case table: [edge-cases.md](edge-cases.md).
-- **What the proposal studio makes of our inputs**: `node test/studio_adapter.test.js` runs `Adapt for Studio` and then
+- **What the proposal studio makes of the pipeline's inputs**: `node test/studio_adapter.test.js` runs `Adapt for Studio` and then
   the studio's own normaliser (`services/proposal-studio/agents/lib/input.js`, read-only, `STUDIO_DIR`) on the 10 real
   proposal inputs of run 3 (`test/out/execution_ragv2_run3_nodes/Build_Proposal_Input.json`, shipped as a fixture) and
   the example. No server, no network.
@@ -354,7 +354,7 @@ Verified in a real n8n with this version (throwaway container, your real tool id
 - every node's output was then read from 4 angles; the confirmed findings are fixed (above) and checked by replaying that
   run (`node test/replay.js` on that recording, not shipped) and by unit cases.
 
-Verified in a real n8n with the team RAG v2 (throwaway container, real Firecrawl on your 2 sites, BOAMP, the demo
+Verified in a real n8n with the RAG v2 (throwaway container, real Firecrawl on your 2 sites, BOAMP, the demo
 tenders, local `qwen3:4b-instruct`, 2026-10-20), three full runs, each followed by a review of every node's output:
 - run 1: 62 findings, 55 confirmed by independent skeptics; fixed in three rounds (each fix tested in its own copy of the
   project and re-checked by a skeptic before the merge);

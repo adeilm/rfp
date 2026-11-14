@@ -24,13 +24,8 @@ PATH_SUFFIXES = (".py", ".sh", ".bat", ".json", ".md")
 # Created by the server at run time, or outside the project: never checked.
 IGNORED_PREFIXES = ("saves/", "uploads/", "exports/", "screenshots/", "dist/", "../", "/", "~")
 
-# Files the agent builders will CREATE (their deliverables), and the name of the legacy
-# save file that Phase 0 migrates away. They are mentioned on purpose and do not exist yet.
+# The name of the legacy save file that Phase 0 migrates away: mentioned on purpose, never present.
 EXPECTED_LATER = {
-    "workflows/credibility.json", "credibility.json",          # Agent 5 export
-    "workflows/README_credibility.md",                         # Agent 5 import notes
-    "tests/credibility/extra/",                                # extra Agent 5 inputs, if any
-    "diagrams.json",                                           # diagram agents export
     "None.json",                                               # legacy save name, migrated at start
 }
 

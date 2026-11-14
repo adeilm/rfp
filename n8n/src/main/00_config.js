@@ -120,7 +120,7 @@ const sources = [
   // { type: 'url', name: 'my-portal', enabled: true, country: 'TN', language: 'ar', url: 'https://.../list?page={page}', maxPages: 2, allowedHosts: [] },
 ];
 
-// ===== the team's proposal studio (rfp-studio: a tender inbox + its own deck agents, started with tools/start_studio.ps1)
+// ===== the proposal studio (rfp-studio: a tender inbox + its own deck agents, started with tools/start_studio.ps1)
 const STUDIO_URL = 'http://host.docker.internal:8091';
 // 'top1' = after the send, "Start Deck" asks the studio for the deck of the rank-1 tender (the studio makes one deck at a time,
 // about 36k LLM tokens and 4-5 min each); 'none' = every deck is started by a person, in the studio or the interface

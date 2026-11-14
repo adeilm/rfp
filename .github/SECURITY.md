@@ -8,7 +8,7 @@ GitHub: adeilm) with:
 - how to reproduce it,
 - the impact you expect.
 
-We answer within 5 working days and agree on a fix and disclosure date with you.
+I answer within 5 working days and agree on a fix and disclosure date with you.
 
 ## Secrets
 

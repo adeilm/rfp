@@ -8,7 +8,7 @@
 The knowledge base is real: 19 CVs, plus company projects, tools and clients taken from the CVs and olivesoft.fr.
 The tenders shown in the new frontend are **samples**. This document explains what happens when **real tenders from
 the n8n pipeline** arrive, and what must be built so that they reach the dashboard and the proposal generator
-(`docs/team/README_agents.md`).
+(`docs/design/Agents_Design.md`).
 
 ---
 
@@ -77,7 +77,7 @@ flowchart LR
 
 ## 5. Mapping RAG output to the proposal generator input
 
-Proposal input format: `docs/team/README_agents.md` §4.1.
+Proposal input format: `docs/design/Agents_Design.md` §4.1.
 
 | Proposal field | Source | Notes |
 |---|---|---|
@@ -132,7 +132,7 @@ directly onto the buyer-research schema already used by the Prospect tab.
 - Make "New analysis" call `POST /api/tenders` (manual tenders use the same path as n8n).
 - Serve the built frontend from the RAG service on port 8001.
 
-## 7. Open decisions for the team
+## 7. Open decisions
 
 1. **Proposal gate:** RAG fit ≥ 85, n8n relevance ≥ 85, or a manual "Bid" click? (Recommended: manual Bid, with fit shown as guidance.)
 2. **Where tenders live:** RAG SQLite store (recommended: one place for the dashboard) or the n8n Google Sheet.
